@@ -22,7 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
-use work.all;--required to include local directory modules, i.e. seg7
+use work.all;  --required to include local directory modules, i.e. seg7
 
 
 -- Uncomment the following library declaration if instantiating
@@ -52,23 +52,31 @@ architecture Behavioral of lab2_top is
 --  signal btnu  : STD_LOGIC;
 
 begin
-  process(SW, BTNC, BTND, BTNU)         --assignments
-    digit     <= SW (3 downto 0) when BTNC = '0' else  -- implements task 3 requirement 1 & 5b
-    x"0";
+  process(SW, BTNC, BTND, BTNU, seg7)
+  begin  --assignments
+    if BTNC = '1' then  -- implements task 3 requirement 1 & 5b, cannot use when else in process
+      digit <= x"0";
+      AN    <= "00000000";
+    else
+      digit <= SW(3 downto 0);
+      if BTNU = '1' then  -- set up to be like the video. Implements Task 3 requirement 3, could have been done with at case based truth table or setting some default behavior in the case table when more the one button pressed.
+        AN <= "00001111";
+      else
+        if BTND = '1' then              -- Implements Task 3 requirement 4.
+          AN <= "11110000";
+        else
+          AN <= not SW(11 downto 4);  --Power is supplied to the displays when the output is low. Implements task 3 requirement 2a
+        end if;
+      end if;
+    end if;
     SEG7_CATH <= seg7;
     LED       <= SW (15 downto 0);      --implements Task 3 requirement 6
 
-    AN <= "00000000" when BTNC = '1' else  --this is the highest priority. Implements Task 3 requirement 5a
-          "00001111" when BTNU = '1' else  -- set up to be like the video. Implements Task 3 requirement 3
-          "11110000" when BTND = '1' else  -- Implements Task 3 requirement 4.
-          not SW(11 downto 4);  --Power is supplied to the displays when the output is low. Implements task 3 requirement 2a
   end process;
---instantiating the 7 segment encoder.
-    seg7_hex_1 : entity seg7_hex
+  seg7_hex_1 : entity seg7_hex
     port map (
       digit => digit,
       seg7  => seg7
-      );                                --implements task 3 requirement 2b
-
+      );  --instantiating the 7 segment encoder. implements task 3 requirement 2b
 
 end Behavioral;
