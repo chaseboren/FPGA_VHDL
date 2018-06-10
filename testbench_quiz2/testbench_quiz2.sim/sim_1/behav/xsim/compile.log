@@ -1,0 +1,17 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-1412] syntax error near entity [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:35]
+ERROR: [VRFC 10-616] entity testbenchq2_top is not yet compiled [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:39]
+ERROR: [VRFC 10-91] ns is not declared [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:42]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-1412] syntax error near entity [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:35]
+ERROR: [VRFC 10-616] entity testbenchq2_top is not yet compiled [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:39]
+ERROR: [VRFC 10-91] ns is not declared [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:42]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-1412] syntax error near entity [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:35]
+ERROR: [VRFC 10-616] entity testbenchq2_top is not yet compiled [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:39]
+ERROR: [VRFC 10-91] ns is not declared [/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd:42]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_quiz2/testbench_quiz2.srcs/sources_1/new/testbenchQ2_top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity testbenchq2_top
