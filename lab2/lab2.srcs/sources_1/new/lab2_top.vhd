@@ -22,7 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
-use work.all;
+use work.all;--required to include local directory modules, i.e. seg7
 
 
 -- Uncomment the following library declaration if instantiating
