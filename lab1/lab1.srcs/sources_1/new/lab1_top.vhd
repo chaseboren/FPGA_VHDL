@@ -5,16 +5,16 @@
 -- Create Date: 06/02/2018 09:47:11 AM
 -- Design Name:
 -- Module Name: lab1_top - Behavioral
--- Project Name:
--- Target Devices:
--- Tool Versions:
--- Description:
+-- Project Name: Lab 1
+-- Target Devices: Nexys4 DDR
+-- Tool Versions: Vivado 2018.1
+-- Description: Uses slider switches and push buttons on board to light the 7 segment displays. 
 --
--- Dependencies:
+-- Dependencies: seg7_hex
 --
--- Revision:
+-- Revision: 1.0
 -- Revision 0.01 - File Created
--- Additional Comments:
+-- Additional Comments: N/A
 --
 ----------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ end lab1_top;
 architecture Behavioral of lab1_top is
   signal digit : STD_LOGIC_VECTOR (3 downto 0);
   signal seg7  : STD_LOGIC_VECTOR (7 downto 0);
---  signal btnc  : STD_LOGIC;
+--  signal btnc  : STD_LOGIC; not needed
 --  signal btnd  : STD_LOGIC;
 --  signal btnu  : STD_LOGIC;
 

@@ -38,7 +38,7 @@ begin
   --display_digit <= digit (3 downto 0);
   process(digit)
   begin
-    case digit is                       --Implements task 2 when sel not available in process. I went with case because it seemed cleaner
+    case digit is                       --Implements task 2 when sel not available in process. I went with case because it seemed cleaner than nested if then else.
       when x"0"   => seg7 <= "11000000";
       when x"1"   => seg7 <= "11111001";
       when x"2"   => seg7 <= "10100100";
