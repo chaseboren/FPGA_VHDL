@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.all;
 entity Dtype is
   port(clk   : in  std_logic;
        reset : in  std_logic;
-       d     : in  std_logic_vector(3 downto 0)
+       d     : in  std_logic_vector(3 downto 0);
        en    : in  std_logic;
        q     : out std_logic_vector(3 downto 0));
 end Dtype;
@@ -22,4 +22,4 @@ begin
       end if;
     end if;
   end process;
-end rtl
+end rtl;

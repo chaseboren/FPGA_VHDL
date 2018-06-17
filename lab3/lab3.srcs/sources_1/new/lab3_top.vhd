@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
 use work.all;
 
 -- Uncomment the following library declaration if using
@@ -37,14 +38,16 @@ entity lab3_top is
         SW        : in  std_logic_vector (3 downto 0);
         BTNC      : in  std_logic;
         SEG7_CATH : out std_logic_vector (7 downto 0);
-        AN        : out std_logic_vector (7 downto 0))
-    );
+        AN        : out std_logic_vector (7 downto 0));
 end lab3_top;
 
 architecture Behavioral of lab3_top is
+  signal clk           : std_logic;
   signal pulse1Hz      : std_logic;
   signal pulse1KHz     : std_logic;
-  signal anode_counter : std_logic_vector(2 downto 0);
+  signal max1Hz        : unsigned (26 downto 0);
+  signal max1kHz       : unsigned (26 downto 0);
+  signal anode_counter : unsigned(2 downto 0);
   signal reset         : std_logic;
   signal d0            : std_logic_vector (3 downto 0);
   signal q0            : std_logic_vector (3 downto 0);
@@ -61,93 +64,95 @@ begin
   reset     <= BTNC;
   d0        <= SW;
   SEG7_CATH <= seg7;
-  pulse_generator_1 : pulse_generator
+  clk       <= CLK100MHZ;
+  max1Hz    <= "101111101011110000100000000";
+  max1KHz   <= "000000000011000011010100000";
+  pulse_generator_1 : entity pulse_generator
     port map (
-      CLK100MHZ                     => clk,
-      reset                         => reset,
-      "101111101011110000100000000" => maxCount,
-      pulse1Hz                      => pulseOut
+      clk       => clk,
+      reset     => reset,
+      maxCount => max1KHz,
+      pulseOut  => pulse1Khz
       );
-  pulse_generator_2 : pulse_generator
-    port map (
-      CLK100MHZ                     => clk,
-      reset                         => reset,
-      "000000000011000011010100000" => maxCount,
-      pulse1KHz                     => pulseOut
-      );
-  upCounter_1 : upCounter
-    port map (
-      CLK100MHZ     => clk,
-      reset         => reset,
-      anode_counter => counter,
-      pulse1KHz     => en
-      );
-  Dtype_0 : Dtype
+  pulse_generator_2 : entity pulse_generator
     port map (
       clk      => clk,
       reset    => reset,
-      d0       => d,
-      q0       => q,
-      pulse1Hz => en
+      maxCount => max1Hz,
+      pulseOut => pulse1Hz
       );
-  Dtype_1 : Dtype
+  upCounter_1 : entity upCounter
     port map (
-      clk      => clk,
-      reset    => reset,
-      q0       => d,
-      q1       => q,
-      pulse1Hz => en
+      clk     => clk,
+      reset   => reset,
+      counter => anode_counter,
+      en      => pulse1KHz
       );
-
-  Dtype_2 : Dtype
+  Dtype_0 : entity Dtype
     port map (
-      clk      => clk,
-      reset    => reset,
-      q1       => d,
-      q2       => q,
-      pulse1Hz => en
+      clk   => clk,
+      reset => reset,
+      d     => d0,
+      q     => q0,
+      en    => pulse1Hz
       );
-  Dtype_3 : Dtype
+  Dtype_1 : entity Dtype
     port map (
-      clk      => clk,
-      reset    => reset,
-      q2       => d,
-      q3       => q,
-      pulse1Hz => en
+      clk   => clk,
+      reset => reset,
+      d     => q0,
+      q     => q1,
+      en    => pulse1Hz
       );
-  Dtype_4 : Dtype
+  Dtype_2 : entity Dtype
     port map (
-      clk      => clk,
-      reset    => reset,
-      q3       => d,
-      q4       => q,
-      pulse1Hz => en
+      clk   => clk,
+      reset => reset,
+      d     => q1,
+      q     => q2,
+      en    => pulse1Hz
       );
-  Dtype_5 : Dtype
+  Dtype_3 : entity Dtype
     port map (
-      clk      => clk,
-      reset    => reset,
-      q4       => d,
-      q5       => q,
-      pulse1Hz => en
+      clk   => clk,
+      reset => reset,
+      d     => q2,
+      q     => q3,
+      en    => pulse1Hz
       );
-  Dtype_6 : Dtype
+  Dtype_4 : entity Dtype
     port map (
-      clk      => clk,
-      reset    => reset,
-      q5       => d,
-      q6       => q,
-      pulse1Hz => en
+      clk   => clk,
+      reset => reset,
+      d     => q3,
+      q     => q4,
+      en    => pulse1Hz
       );
-  Dtype_7 : Dtype
+  Dtype_5 : entity Dtype
     port map (
-      clk      => clk,
-      reset    => reset,
-      q6       => d,
-      q7       => q,
-      pulse1Hz => en
+      clk   => clk,
+      reset => reset,
+      d     => q4,
+      q     => q5,
+      en    => pulse1Hz
       );
-  seg7_hex_1 : seg7_hex
+  Dtype_6 : entity Dtype
+    port map (
+      clk   => clk,
+      reset => reset,
+      d     => q5,
+      q     => q6,
+      en    => pulse1Hz
+      );
+  Dtype_7 : entity Dtype
+    port map (
+      clk   => clk,
+      reset => reset,
+      d     => q6,
+      q     => q7,
+      en    => pulse1Hz
+      );
+  seg7_hex_1 : entity seg7_hex
     port map (
       digit => digit,
       seg7  => seg7
@@ -159,27 +164,28 @@ begin
       AN <= x"fe";
     else
       case anode_counter is
-        when x"0" => AN <= x"fe";
-        when x"1" => AN <= x"fd";
-        when x"2" => AN <= x"fb";
-        when x"3" => AN <= x"f7";
-        when x"4" => AN <= x"ef";
-        when x"5" => AN <= x"df";
-        when x"6" => AN <= x"bf";
-        when x"7" => AN <= x"7f";
+        when "000" => AN <= x"fe";
+        when "001" => AN <= x"fd";
+        when "010" => AN <= x"fb";
+        when "011" => AN <= x"f7";
+        when "100" => AN <= x"ef";
+        when "101" => AN <= x"df";
+        when "110" => AN <= x"bf";
+        when "111" => AN <= x"7f";
+        when others => AN <=x"fe";
       end case;
     end if;
   end process;
   with anode_counter select
     digit <=
-    q0   when x"0" ,
-    q1   when x"1" ,
-    q2   when x"2" ,
-    q3   when x"3" ,
-    q4   when x"4" ,
-    q5   when x"5" ,
-    q6   when x"6" ,
-    q7   when x"7" ,
+    q0   when x"0",
+    q1   when x"1",
+    q2   when x"2",
+    q3   when x"3",
+    q4   when x"4",
+    q5   when x"5",
+    q6   when x"6",
+    q7   when x"7",
     x"0" when others;
 
 end Behavioral;

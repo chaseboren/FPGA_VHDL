@@ -1,0 +1,314 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Jun 16 20:23:58 2018
+# Process ID: 20303
+# Current directory: /home/chase/github/FPGA_VHDL/lab3/lab3.runs/synth_1
+# Command line: vivado -log lab3_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab3_top.tcl
+# Log file: /home/chase/github/FPGA_VHDL/lab3/lab3.runs/synth_1/lab3_top.vds
+# Journal file: /home/chase/github/FPGA_VHDL/lab3/lab3.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script '/root/.Xilinx/Vivado/Vivado_init.tcl'
+source lab3_top.tcl -notrace
+Command: synth_design -top lab3_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 20319 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1293.012 ; gain = 86.926 ; free physical = 539 ; free virtual = 2189
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'lab3_top' [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'pulse_generator' [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/pulse_generator.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'pulse_generator' (1#1) [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/pulse_generator.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'upCounter' [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/upcounter.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'upCounter' (2#1) [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/upcounter.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'Dtype' [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/dtype.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Dtype' (3#1) [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/dtype.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'seg7_hex' [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/seg7_hex.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'seg7_hex' (4#1) [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/seg7_hex.vhd:32]
+INFO: [Synth 8-226] default block is never used [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:166]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:181]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:182]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:183]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:184]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:185]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:186]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:187]
+WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:188]
+INFO: [Synth 8-226] default block is never used [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:180]
+INFO: [Synth 8-256] done synthesizing module 'lab3_top' (5#1) [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/sources_1/new/lab3_top.vhd:44]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1337.621 ; gain = 131.535 ; free physical = 549 ; free virtual = 2202
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1337.621 ; gain = 131.535 ; free physical = 548 ; free virtual = 2201
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1337.621 ; gain = 131.535 ; free physical = 548 ; free virtual = 2201
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/constrs_1/new/nexys4_constraint.xdc]
+Finished Parsing XDC File [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/constrs_1/new/nexys4_constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/chase/github/FPGA_VHDL/lab3/lab3.srcs/constrs_1/new/nexys4_constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab3_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/lab3_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1651.375 ; gain = 0.000 ; free physical = 268 ; free virtual = 1938
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:54 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 346 ; free virtual = 2017
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:54 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 346 ; free virtual = 2017
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:54 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 348 ; free virtual = 2018
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:54 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 338 ; free virtual = 2009
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   9 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module lab3_top 
+Detailed RTL Component Info : 
++---Muxes : 
+	   9 Input      8 Bit        Muxes := 1     
+Module upCounter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+Module Dtype 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:55 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 326 ; free virtual = 1998
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:01:07 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 196 ; free virtual = 1872
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:01:07 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 189 ; free virtual = 1866
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    14|
+|3     |LUT2   |    57|
+|4     |LUT3   |     3|
+|5     |LUT4   |    22|
+|6     |LUT6   |    14|
+|7     |MUXF7  |     4|
+|8     |FDCE   |    89|
+|9     |IBUF   |     6|
+|10    |OBUF   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------+------------------+------+
+|      |Instance            |Module            |Cells |
++------+--------------------+------------------+------+
+|1     |top                 |                  |   226|
+|2     |  Dtype_0           |Dtype             |     4|
+|3     |  Dtype_1           |Dtype_0           |     4|
+|4     |  Dtype_2           |Dtype_1           |     4|
+|5     |  Dtype_3           |Dtype_2           |     4|
+|6     |  Dtype_4           |Dtype_3           |     4|
+|7     |  Dtype_5           |Dtype_4           |     4|
+|8     |  Dtype_6           |Dtype_5           |     4|
+|9     |  Dtype_7           |Dtype_6           |     4|
+|10    |  pulse_generator_1 |pulse_generator   |    69|
+|11    |  pulse_generator_2 |pulse_generator_7 |    69|
+|12    |  upCounter_1       |upCounter         |    33|
++------+--------------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.375 ; gain = 445.289 ; free physical = 190 ; free virtual = 1866
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1651.375 ; gain = 131.535 ; free physical = 244 ; free virtual = 1920
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:01:08 . Memory (MB): peak = 1651.383 ; gain = 445.289 ; free physical = 254 ; free virtual = 1930
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:01:11 . Memory (MB): peak = 1651.383 ; gain = 457.824 ; free physical = 242 ; free virtual = 1918
+INFO: [Common 17-1381] The checkpoint '/home/chase/github/FPGA_VHDL/lab3/lab3.runs/synth_1/lab3_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file lab3_top_utilization_synth.rpt -pb lab3_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1651.383 ; gain = 0.000 ; free physical = 243 ; free virtual = 1920
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 16 20:25:24 2018...

@@ -24,4 +24,4 @@ begin
     end if;
   end process;
   counter <= cntr_sig;
-end rtl
+end rtl;
