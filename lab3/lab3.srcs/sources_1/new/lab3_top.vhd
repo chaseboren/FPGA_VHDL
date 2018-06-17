@@ -56,13 +56,15 @@ architecture Behavioral of lab3_top is
   signal q6       : std_logic_vector (3 downto 0);
   signal q7       : std_logic_vector (3 downto 0);
   signal seg7     : std_logic_vector (7 downto 0);
-  signal digit    : std_logic_vector (3 downto 0);
+  signal anode    : std_logic_vector (7 downto 0);
+--signal digit    : std_logic_vector (3 downto 0);
 begin
   reset     <= BTNC;
   d0        <= SW;
   SEG7_CATH <= seg7;
   clk       <= CLK100MHZ;
   max1Hz    <= "101111101011110000100000000";
+  AN        <= anode;
   pulse_generator_0 : entity pulse_generator
     port map (
       clk      => clk,

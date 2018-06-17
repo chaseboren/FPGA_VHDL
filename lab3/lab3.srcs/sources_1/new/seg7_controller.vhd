@@ -22,7 +22,7 @@ architecture Behavioral of seg7_controller is
   signal max1KHz       : unsigned (26 downto 0);
   signal pulse1KHz     : std_logic;
   signal anode_counter : unsigned(2 downto 0);
-  signal max1kHz       : unsigned (26 downto 0);
+  signal digit         : std_logic_vector (3 downto 0);
 begin
   max1KHz <= "000000000011000011010100000";
   pulse_generator_0 : entity pulse_generator

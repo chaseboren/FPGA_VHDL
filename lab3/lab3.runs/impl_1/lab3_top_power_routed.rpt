@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date             : Sat Jun 16 20:27:27 2018
-| Host             : Vivado-dev running 64-bit Ubuntu 18.04 LTS
+| Date             : Sat Jun 16 21:18:36 2018
+| Host             : Vivado-dev running 64-bit unknown
 | Command          : report_power -file lab3_top_power_routed.rpt -pb lab3_top_power_summary_routed.pb -rpx lab3_top_power_routed.rpx
 | Design           : lab3_top
 | Device           : xc7a100tcsg324-1
@@ -138,21 +138,22 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------------------+-----------+
-| Name                | Power (W) |
-+---------------------+-----------+
-| lab3_top            |     0.001 |
-|   Dtype_0           |    <0.001 |
-|   Dtype_1           |    <0.001 |
-|   Dtype_2           |    <0.001 |
-|   Dtype_3           |    <0.001 |
-|   Dtype_4           |    <0.001 |
-|   Dtype_5           |    <0.001 |
-|   Dtype_6           |    <0.001 |
-|   Dtype_7           |    <0.001 |
-|   pulse_generator_1 |    <0.001 |
-|   pulse_generator_2 |    <0.001 |
-|   upCounter_1       |    <0.001 |
-+---------------------+-----------+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| lab3_top              |     0.001 |
+|   Dtype_0             |    <0.001 |
+|   Dtype_1             |    <0.001 |
+|   Dtype_2             |    <0.001 |
+|   Dtype_3             |    <0.001 |
+|   Dtype_4             |    <0.001 |
+|   Dtype_5             |    <0.001 |
+|   Dtype_6             |    <0.001 |
+|   Dtype_7             |    <0.001 |
+|   pulse_generator_0   |    <0.001 |
+|   seg7_controller_1   |    <0.001 |
+|     pulse_generator_0 |    <0.001 |
+|     upCounter_0       |    <0.001 |
++-----------------------+-----------+
 
 
