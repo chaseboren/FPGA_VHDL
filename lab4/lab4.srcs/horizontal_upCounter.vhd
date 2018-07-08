@@ -8,15 +8,16 @@ entity horizontal_upCounter is
   port(clk     : in  std_logic;
        reset   : in  std_logic;
        en      : in  std_logic;
-       counter : out unsigned(9 downto 0));  --counts 0-7 (or 1-8)
+       counter : out unsigned(9 downto 0);  --counts 0-7 (or 1-8)
+       dsen    : out std_logic);
 end horizontal_upCounter;
 
 architecture rtl of horizontal_upCounter is
   signal cntr_sig : unsigned(9 downto 0);
-
+  signal dsenint : std_logic;
 begin
   process (clk, reset)
-    constant maxCount : unsigned(9 downto 0) := 1100011111;  --this is 799
+  constant maxCount : unsigned(9 downto 0) := "1100011111";  --this is 799
   begin
     if (reset = '1') then               --asynchronous reset
       cntr_sig <= (others => '0');
@@ -24,11 +25,14 @@ begin
       if (en = '1')then
         if cntr_sig < maxCount then
           cntr_sig <= cntr_sig + 1;     --iterate
+          dsenint <= '0';
         else
           cntr_sig <= (others => '0');
+          dsenint <= '1';
         end if;
       end if;
     end if;
   end process;
   counter <= cntr_sig;
+  dsen <= dsenint;
 end rtl;

@@ -11,12 +11,12 @@ entity vertical_upCounter is
        counter : out unsigned(9 downto 0));  --counts 0-7 (or 1-8)
 end vertical_upCounter;
 
-architecture rtl of upCounter is
+architecture rtl of vertical_upCounter is
   signal cntr_sig : unsigned(9 downto 0);
 
 begin
   process (clk, reset)
-    constant maxCount : unsigned(9 downto 0) := 1000001000;  --this is 520
+  constant maxCount : unsigned(9 downto 0) := "1000001000";  --this is 520
   begin
     if (reset = '1') then               --asynchronous reset
       cntr_sig <= (others => '0');

@@ -14,11 +14,11 @@ architecture rtl of btnDebounce is
 
 begin
   process(clk)
-    variable counter    : unsigned(23 downto 0) := (others => '0')
-    constant maxCounter : unsigned(23 downto 0) := 100110001001011010000000;
+    variable counter    : unsigned(23 downto 0) := (others => '0');
+    constant maxCounter : unsigned(23 downto 0) := "100110001001011010000000";
   begin
     if rising_edge(clk) then
-      if btn = '0' then
+      if btn = '1' then
         if counter < maxCounter then
           counter := counter + 1;
         else
@@ -26,7 +26,7 @@ begin
         end if;
       else
         btnDB   <= '0';
-        counter := (others => '0')
+        counter := (others => '0');
       end if;
     end if;
   end process;

@@ -2,14 +2,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity pulse_generator is
+entity pulse_generator_small is
   port (clk      : in  std_logic;
         reset    : in  std_logic;
         maxCount : in  unsigned (2 downto 0);  --27 bits to get to 100 million which ultimately allows for 1 Hz.
         pulseOut : out std_logic);
-end pulse_generator;
+end pulse_generator_small;
 
-architecture Behavioral of pulse_generator is
+architecture Behavioral of pulse_generator_small is
   signal pulseCnt : unsigned(2 downto 0);
   signal clear    : std_logic;
 begin
