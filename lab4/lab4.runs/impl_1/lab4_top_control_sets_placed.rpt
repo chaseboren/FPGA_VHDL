@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date         : Sun Jul  8 14:32:47 2018
+| Date         : Sun Jul  8 14:43:28 2018
 | Host         : Vivado-dev running 64-bit unknown
 | Command      : report_control_sets -verbose -file lab4_top_control_sets_placed.rpt
 | Design       : lab4_top
@@ -52,9 +52,9 @@ Table of Contents
 | No           | No                    | No                     |              12 |            9 |
 | No           | No                    | Yes                    |              32 |           10 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              22 |            8 |
+| Yes          | No                    | No                     |              22 |            9 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             133 |           38 |
+| Yes          | Yes                   | No                     |             133 |           39 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -67,17 +67,17 @@ Table of Contents
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   | pulse_generator_small_0/VGA_HS_reg       |                1 |              1 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   | pulse_generator_small_0/VGA_VS_reg       |                1 |              1 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   | pulse_generator_small_0/h_count_reg[0]   |                1 |              4 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/E[0]                   | pulse_generator_small_0/SR[0]            |                2 |              5 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/E[0]                   | pulse_generator_small_0/SR[0]            |                1 |              5 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/xpix_counter_reg[0][0] |                                          |                1 |              5 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/xpos                   | btnDebounce_L/xpos_reg[5]                |                2 |              5 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/ypos                   | pulse_generator_small_0/ypos_reg[5]      |                2 |              5 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/ypos                   | pulse_generator_small_0/ypos_reg[5]      |                3 |              5 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/xframe_reg[0][0]       | pulse_generator_small_0/h_count_reg[0]   |                3 |              8 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/yframe_reg[0][0]       | pulse_generator_small_0/yframe_reg[7][0] |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/yframe_reg[0][0]       | pulse_generator_small_0/yframe_reg[7][0] |                3 |              8 |
 |  CLK100MHZ_IBUF_BUFG |                                                |                                          |                9 |             12 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   |                                          |                7 |             17 |
-|  CLK100MHZ_IBUF_BUFG | btnDebounce_U/counter[0]_i_2_n_0               | btnDebounce_U/clear                      |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   |                                          |                8 |             17 |
 |  CLK100MHZ_IBUF_BUFG | btnDebounce_L/counter[0]_i_2__0_n_0            | btnDebounce_L/counter[0]_i_1__1_n_0      |                6 |             24 |
 |  CLK100MHZ_IBUF_BUFG | btnDebounce_R/counter[0]_i_2__2_n_0            | btnDebounce_R/counter[0]_i_1__2_n_0      |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG | btnDebounce_U/counter[0]_i_2_n_0               | btnDebounce_U/clear                      |                6 |             24 |
 |  CLK100MHZ_IBUF_BUFG | btnDebounce_D/counter[0]_i_2__1_n_0            | btnDebounce_D/counter[0]_i_1__0_n_0      |                6 |             24 |
 |  CLK100MHZ_IBUF_BUFG |                                                | LED_OBUF                                 |               10 |             32 |
 +----------------------+------------------------------------------------+------------------------------------------+------------------+----------------+

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date         : Sun Jul  8 14:33:37 2018
+| Date         : Sun Jul  8 14:44:03 2018
 | Host         : Vivado-dev running 64-bit unknown
 | Command      : report_methodology -file lab4_top_methodology_drc_routed.rpt -pb lab4_top_methodology_drc_routed.pb -rpx lab4_top_methodology_drc_routed.rpx
 | Design       : lab4_top

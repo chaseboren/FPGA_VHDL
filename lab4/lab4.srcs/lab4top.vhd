@@ -241,7 +241,7 @@ begin
           end if;
         end if;
       end if;
-      if reset = '1' then --resets cursor position. Has to be outside enable block because en25 is disabled during reest. 
+      if reset = '1' then --resets cursor position. Has to be outside enable block because en25 is disabled during reest.
         xpos <= x"00";
         ypos <= x"00";
       end if;
@@ -286,7 +286,7 @@ begin
 
   q2 <= std_logic_vector(xpos(3 downto 0));
 
-  q3 <= "0000" when xpos < x"0F" else "0001";
+  q3 <= "0000" when xpos <= x"0F" else "0001";
 
   AN        <= anode;
   SEG7_CATH <= seg7;
