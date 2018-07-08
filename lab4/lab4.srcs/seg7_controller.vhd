@@ -60,20 +60,19 @@ begin
         when "100"  => anode <= x"ef";
         when "101"  => anode <= x"df";
         when "110"  => anode <= x"bf";
-        when "111"  => anode <= x"7f";
-        when others => anode <= x"fe";--not needed but would not synthesize without it. Could have picked a case, but I prefer to be explicit.
+        when others  => anode <= x"7f";
+      --  when others => anode <= x"fe";--not needed but would not synthesize without it. Could have picked a case, but I prefer to be explicit.
       end case;
     end if;
   end process;
   with anode_counter select--from up counter
     digit <=
-    q0   when x"0",--send first register to seg7 encoder
-    q1   when x"1",
-    q2   when x"2",
-    q3   when x"3",
-    q4   when x"4",
-    q5   when x"5",
-    q6   when x"6",
-    q7   when x"7",
-    x"0" when others;
+    q0   when "000",--send first register to seg7 encoder
+    q1   when "001",
+    q2   when "010",
+    q3   when "011",
+    q4   when "100",
+    q5   when "101",
+    q6   when "110",
+    q7   when others;
 end Behavioral;

@@ -21,8 +21,11 @@ begin
       if btn = '1' then
         if counter < maxCounter then
           counter := counter + 1;
-        else
+        elsif counter <= maxCounter +  3 then
           btnDB <= '1';
+          counter := counter +1 ;
+        else
+          btnDB <= '0';
         end if;
       else
         btnDB   <= '0';

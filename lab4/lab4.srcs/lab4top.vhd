@@ -17,7 +17,7 @@ entity lab4_top is
   port (CLK100MHZ : in std_logic;
 
         SW  : in  std_logic;
-        LED : out std_logic_vector (8 downto 0);
+        LED : out std_logic;
 
         BTNU : in std_logic;
         BTND : in std_logic;
@@ -44,7 +44,7 @@ architecture Behavioral of lab4_top is
   signal btnDBUint : std_logic;
   signal btnDBDint : std_logic;
 
-  constant twentyfivemhzmaxCount : unsigned (2 downto 0) := "011";
+  constant twentyfivemhzmaxCount : unsigned (1 downto 0) := "11";
   signal en25                    : std_logic;
 
   signal horizontal_counter       : unsigned (9 downto 0);
@@ -165,24 +165,25 @@ begin
     if rising_edge(clk) then
       if en25 = '1' then
         if h_count < h_period - 1 then
-          h_count := h_count + 1;
-          if h_count < h_pixels then
+          h_count    := h_count + 1;
+          if h_count <= h_pixels then
             xpix_counter := xpix_counter + 1;  --cheating some what  and letting it wraparound since unsigned.
             if xpix_counter = "00000" then
-              xframe <= xframe + 1;
-              xcheckerboard<= not xcheckerboard;
+              xframe        <= xframe + 1;
+              xcheckerboard <= not xcheckerboard;
             end if;
-          else
-            xpix_counter := "00000";
+--          else
+--            xpix_counter := "00000";
           end if;
         else
           h_count := 0;
+          xframe  <= x"00";
           if v_count < v_period - 1 then
             v_count := v_count + 1;
             if v_count < v_pixels then
               ypix_counter := ypix_counter + 1;  --cheating some what  and letting it wraparound since unsigned.
               if ypix_counter = "00000" then
-                yframe <= yframe + 1;
+                yframe        <= yframe + 1;
                 ycheckerboard <= not ycheckerboard;
               end if;
             else
@@ -190,6 +191,7 @@ begin
             end if;
           else
             v_count := 0;
+            yframe  <= x"00";
           end if;
         end if;
         if h_count < h_pixels + h_fp or h_count >= h_pixels + h_fp + h_pulse then
@@ -208,81 +210,42 @@ begin
           vga_A <= '0';
         end if;
 
+        if btnDBU = '1' then
+          if ypos /= x"00" then         --helps to map to torus
+            ypos <= ypos - 1;
+          else
+            ypos <= x"0E";
+          end if;
+        end if;
+        if btnDBD = '1' then
+          if ypos < x"0E" then          --helps to map to torus
+            ypos <= ypos + 1;
+          else
+            ypos <= x"00";
+          end if;
+        end if;
 
+
+        if btnDBR = '1' then
+          if xpos < x"13" then          --helps to map to torus
+            xpos <= xpos + 1;
+          else
+            xpos <= x"00";
+          end if;
+        end if;
+        if btnDBL = '1' then
+          if xpos /= x"00" then         --helps to map to torus
+            xpos <= xpos - 1;
+          else
+            xpos <= x"13";
+          end if;
+        end if;
       end if;
-    end if;
-
---    if rising_edge(btnDBU) then
---      btnDBUint <= '1';
---    end if;
---    if rising_edge(btnDBD) then
---      btnDBDint <= '1';
---    end if;
---    if rising_edge(btnDBL) then
---      btnDBLint <= '1';
---    end if;
---    if rising_edge(btnDBR) then
---      btnDBRint <= '1';
---  end if;
-
-    if (reset = '1') then
-      ypos <= (others => '0');
-    elsif btnDBU = '1' then
-      if ypos /= x"00" then             --helps to map to torus
-        ypos <= ypos - 1;
-      else
-        ypos <= x"0E";
-      end if;
-    elsif btnDBD = '1' then
-      if ypos < x"0E" then              --helps to map to torus
-        ypos <= ypos + 1;
-      else
+      if reset = '1' then --resets cursor position. Has to be outside enable block because en25 is disabled during reest. 
+        xpos <= x"00";
         ypos <= x"00";
       end if;
     end if;
-
-
-
-    if (reset = '1') then
-      xpos <= (others => '0');
-    elsif btnDBL = '1' then
-      if xpos < x"13" then              --helps to map to torus
-        xpos <= xpos + 1;
-      else
-        xpos <= x"00";
-      end if;
-    elsif btnDBR = '1' then
-      if xpos /= x"00" then             --helps to map to torus
-        xpos <= xpos - 1;
-      else
-        xpos <= x"13";
-      end if;
-    end if;
-
-
-
-
---    if horizontal_counter <= "1010000000" then  --640
-    --    if vertical_counter <= "0111100000" then  --480
-    --      vga_ARGB (3) <= '1';                    --screen not black
-    --    else
-    --      vga_ARGB (3) <= '0';                    --screen black
-    --    end if;
-    --  end if;
-
-
-
-
-
-
-
-    vga_BLUE <= xcheckerboard;          --arbitrary which is x which is why
-
-
-
-
-
-    vga_GREEN <= ycheckerboard;
 
   end process;
   vga_ARGB <= (vga_A & vga_RED & vga_GREEN & vga_BLUE);
@@ -300,9 +263,9 @@ begin
     x"00F" when "1001",
     x"000" when others;                 --paint it black
 
-  VGA_B <= vga_REDGREENBLUE (11 downto 8);
+  VGA_R <= vga_REDGREENBLUE (11 downto 8);
   VGA_G <= vga_REDGREENBLUE (7 downto 4);
-  VGA_R <= vga_REDGREENBLUE (3 downto 0);
+  VGA_B <= vga_REDGREENBLUE (3 downto 0);
 --    VGA_R <= (vga_A & vga_A & vga_A & vga_A) and "1111";
 --  VGA_G <= (vga_A & vga_A & vga_A & vga_A) and"1111";
 --  VGA_B <= (vga_A & vga_A & vga_A & vga_A) and "1111";
@@ -311,10 +274,15 @@ begin
 --VGA_VS <= '1' when (vertical_counter > "0111101010") and (vertical_counter < "0111101010") else '0';
 
 --cursor matching
-  vga_RED <= '0';
-  reset   <= SW;
+  vga_RED <= '1' when (yframe = ypos) and (xframe = xpos) else '0';
+
+  vga_BLUE <= xcheckerboard;            --arbitrary which is x which is y
+
+  vga_GREEN <= ycheckerboard;
+  reset     <= SW;
+
 --display driver
-  q0      <= std_logic_vector(ypos(3 downto 0));
+  q0 <= std_logic_vector(ypos(3 downto 0));
 
   q2 <= std_logic_vector(xpos(3 downto 0));
 
@@ -325,6 +293,6 @@ begin
 
   clk <= CLK100MHZ;
 
-  LED(0)           <= SW;
-  LED (8 downto 1) <= std_logic_vector(vga_REDGREENBLUE (11 downto 4));
+  LED <= SW;
+-- LED (8 downto 1) <= std_logic_vector(vga_REDGREENBLUE (11 downto 4));
 end Behavioral;

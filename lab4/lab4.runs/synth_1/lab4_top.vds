@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sun Jul  8 08:47:25 2018
-# Process ID: 10172
+# Start of session at: Sun Jul  8 14:27:41 2018
+# Process ID: 30632
 # Current directory: /home/chase/github/FPGA_VHDL/lab4/lab4.runs/synth_1
 # Command line: vivado -log lab4_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab4_top.tcl
 # Log file: /home/chase/github/FPGA_VHDL/lab4/lab4.runs/synth_1/lab4_top.vds
@@ -16,9 +16,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10190 
+INFO: Helper process launched with PID 30654 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1293.016 ; gain = 86.926 ; free physical = 866 ; free virtual = 1550
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1293.008 ; gain = 86.926 ; free physical = 619 ; free virtual = 1392
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'lab4_top' [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:37]
 	Parameter h_pulse bound to: 96 - type: integer 
@@ -40,31 +40,10 @@ INFO: [Synth 8-638] synthesizing module 'upCounter' [/home/chase/github/FPGA_VHD
 INFO: [Synth 8-256] done synthesizing module 'upCounter' (4#1) [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/upcounter.vhd:14]
 INFO: [Synth 8-638] synthesizing module 'seg7_hex' [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_hex.vhd:32]
 INFO: [Synth 8-256] done synthesizing module 'seg7_hex' (5#1) [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_hex.vhd:32]
-INFO: [Synth 8-226] default block is never used [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:55]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:70]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:71]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:72]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:73]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:74]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:75]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:76]
-WARNING: [Synth 8-6044] Case expression and choice expression width mismatch, Case expression is 3 wide and choice expression is 4 wide [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:77]
-INFO: [Synth 8-226] default block is never used [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:69]
 INFO: [Synth 8-256] done synthesizing module 'seg7_controller' (6#1) [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/seg7_controller.vhd:21]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'btnDBU' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'ypos' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'btnDBD' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'btnDBL' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'xpos' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'btnDBR' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'xcheckerboard' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-614] signal 'ycheckerboard' is read in the process but is not in the sensitivity list [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:149]
-WARNING: [Synth 8-6014] Unused sequential element xframe_reg was removed.  [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:172]
-WARNING: [Synth 8-6014] Unused sequential element yframe_reg was removed.  [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:185]
 INFO: [Synth 8-256] done synthesizing module 'lab4_top' (7#1) [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:37]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 1337.625 ; gain = 131.535 ; free physical = 873 ; free virtual = 1560
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 1337.617 ; gain = 131.535 ; free physical = 631 ; free virtual = 1405
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -77,10 +56,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:21 . Memory (MB): peak = 1337.625 ; gain = 131.535 ; free physical = 875 ; free virtual = 1562
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:21 . Memory (MB): peak = 1337.617 ; gain = 131.535 ; free physical = 629 ; free virtual = 1403
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:21 . Memory (MB): peak = 1337.625 ; gain = 131.535 ; free physical = 875 ; free virtual = 1561
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:21 . Memory (MB): peak = 1337.617 ; gain = 131.535 ; free physical = 629 ; free virtual = 1403
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -96,27 +75,25 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1652.371 ; gain = 0.000 ; free physical = 579 ; free virtual = 1297
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1652.910 ; gain = 0.000 ; free physical = 346 ; free virtual = 1139
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:01:27 . Memory (MB): peak = 1652.371 ; gain = 446.281 ; free physical = 658 ; free virtual = 1377
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1652.910 ; gain = 446.828 ; free physical = 425 ; free virtual = 1218
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:01:27 . Memory (MB): peak = 1652.371 ; gain = 446.281 ; free physical = 659 ; free virtual = 1377
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1652.910 ; gain = 446.828 ; free physical = 425 ; free virtual = 1218
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:01:27 . Memory (MB): peak = 1652.371 ; gain = 446.281 ; free physical = 660 ; free virtual = 1378
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1652.910 ; gain = 446.828 ; free physical = 426 ; free virtual = 1219
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'ypos_reg' [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:229]
-WARNING: [Synth 8-327] inferring latch for variable 'xpos_reg' [/home/chase/github/FPGA_VHDL/lab4/lab4.srcs/lab4top.vhd:247]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:01:28 . Memory (MB): peak = 1652.371 ; gain = 446.281 ; free physical = 650 ; free virtual = 1369
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1652.910 ; gain = 446.828 ; free physical = 417 ; free virtual = 1210
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -130,25 +107,29 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     10 Bit       Adders := 2     
-	   2 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 4     
 	   2 Input      5 Bit       Adders := 5     
 	   2 Input      4 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
 	                5 Bit    Registers := 2     
-	                3 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 9     
 +---Muxes : 
 	   2 Input     12 Bit        Muxes := 1     
 	   8 Input     12 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 9     
 	   9 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 3     
+	   7 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 6     
 	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -160,33 +141,37 @@ Module lab4_top
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     10 Bit       Adders := 2     
-	   2 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 4     
 	   2 Input      5 Bit       Adders := 5     
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
 	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
 	                5 Bit    Registers := 2     
 	                1 Bit    Registers := 5     
 +---Muxes : 
 	   2 Input     12 Bit        Muxes := 1     
 	   8 Input     12 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 9     
-	   2 Input      8 Bit        Muxes := 3     
+	   7 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 6     
 	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 2     
 Module btnDebounce 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module pulse_generator_small 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
 Module upCounter 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -213,17 +198,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design lab4_top has port LED[8] driven by constant 0
-WARNING: [Synth 8-3917] design lab4_top has port LED[7] driven by constant 0
-WARNING: [Synth 8-3917] design lab4_top has port LED[6] driven by constant 0
-WARNING: [Synth 8-3917] design lab4_top has port LED[5] driven by constant 0
-WARNING: [Synth 8-3917] design lab4_top has port VGA_B[3] driven by constant 0
-WARNING: [Synth 8-3917] design lab4_top has port VGA_B[2] driven by constant 0
-WARNING: [Synth 8-3917] design lab4_top has port VGA_B[1] driven by constant 0
-WARNING: [Synth 8-3917] design lab4_top has port VGA_B[0] driven by constant 0
-WARNING: [Synth 8-3332] Sequential element (pulse_generator_small_0/pulseCnt_reg[2]) is unused and will be removed from module lab4_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1652.371 ; gain = 446.281 ; free physical = 631 ; free virtual = 1354
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:01:36 . Memory (MB): peak = 1652.910 ; gain = 446.828 ; free physical = 396 ; free virtual = 1194
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -235,13 +211,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:01:52 . Memory (MB): peak = 1652.371 ; gain = 446.281 ; free physical = 499 ; free virtual = 1229
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:01:57 . Memory (MB): peak = 1652.910 ; gain = 446.828 ; free physical = 265 ; free virtual = 1069
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:01:54 . Memory (MB): peak = 1652.371 ; gain = 446.281 ; free physical = 491 ; free virtual = 1221
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:02:02 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 253 ; free virtual = 1057
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -252,9 +228,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[7]) is unused and will be removed from module lab4_top.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:01:54 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 492 ; free virtual = 1222
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:02:02 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 253 ; free virtual = 1057
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -278,7 +253,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 492 ; free virtual = 1222
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:02:03 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 252 ; free virtual = 1057
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -291,7 +266,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 492 ; free virtual = 1222
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:02:03 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 252 ; free virtual = 1057
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -303,25 +278,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 490 ; free virtual = 1220
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:02:04 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 252 ; free virtual = 1057
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 490 ; free virtual = 1221
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:02:04 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 252 ; free virtual = 1056
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 490 ; free virtual = 1220
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:02:04 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 252 ; free virtual = 1057
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 490 ; free virtual = 1220
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:02:04 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 252 ; free virtual = 1057
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -339,55 +314,51 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |    31|
-|3     |LUT1   |    13|
-|4     |LUT2   |    18|
-|5     |LUT3   |    24|
-|6     |LUT4   |    36|
-|7     |LUT5   |    28|
-|8     |LUT6   |    38|
+|3     |LUT1   |    15|
+|4     |LUT2   |    26|
+|5     |LUT3   |    22|
+|6     |LUT4   |    61|
+|7     |LUT5   |    39|
+|8     |LUT6   |    56|
 |9     |FDCE   |    32|
-|10    |FDRE   |   135|
-|11    |LDC    |    12|
-|12    |LDCP   |     3|
-|13    |IBUF   |     6|
-|14    |OBUF   |    39|
+|10    |FDRE   |   167|
+|11    |IBUF   |     6|
+|12    |OBUF   |    31|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+--------------------------+----------------------+------+
 |      |Instance                  |Module                |Cells |
 +------+--------------------------+----------------------+------+
-|1     |top                       |                      |   416|
-|2     |  btnDebounce_D           |btnDebounce           |    38|
-|3     |  btnDebounce_L           |btnDebounce_0         |    47|
-|4     |  btnDebounce_R           |btnDebounce_1         |    38|
-|5     |  btnDebounce_U           |btnDebounce_2         |    49|
-|6     |  pulse_generator_small_0 |pulse_generator_small |    14|
-|7     |  seg7_controller_0       |seg7_controller       |    74|
+|1     |top                       |                      |   487|
+|2     |  btnDebounce_D           |btnDebounce           |    50|
+|3     |  btnDebounce_L           |btnDebounce_0         |    53|
+|4     |  btnDebounce_R           |btnDebounce_1         |    44|
+|5     |  btnDebounce_U           |btnDebounce_2         |    44|
+|6     |  pulse_generator_small_0 |pulse_generator_small |    27|
+|7     |  seg7_controller_0       |seg7_controller       |    73|
 |8     |    pulse_generator_0     |pulse_generator       |    48|
-|9     |    upCounter_0           |upCounter             |    26|
+|9     |    upCounter_0           |upCounter             |    25|
 +------+--------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.379 ; gain = 447.289 ; free physical = 490 ; free virtual = 1220
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:02:04 . Memory (MB): peak = 1680.488 ; gain = 474.406 ; free physical = 252 ; free virtual = 1057
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:01:06 . Memory (MB): peak = 1653.379 ; gain = 132.543 ; free physical = 546 ; free virtual = 1276
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:01:56 . Memory (MB): peak = 1653.387 ; gain = 447.289 ; free physical = 556 ; free virtual = 1286
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:01:12 . Memory (MB): peak = 1680.488 ; gain = 159.113 ; free physical = 309 ; free virtual = 1113
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:02:04 . Memory (MB): peak = 1680.496 ; gain = 474.406 ; free physical = 319 ; free virtual = 1124
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 52 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 15 instances were transformed.
-  LDC => LDCE: 12 instances
-  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 3 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-28 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
+26 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:02:01 . Memory (MB): peak = 1653.387 ; gain = 459.824 ; free physical = 543 ; free virtual = 1273
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:02:08 . Memory (MB): peak = 1680.496 ; gain = 486.941 ; free physical = 309 ; free virtual = 1113
 INFO: [Common 17-1381] The checkpoint '/home/chase/github/FPGA_VHDL/lab4/lab4.runs/synth_1/lab4_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file lab4_top_utilization_synth.rpt -pb lab4_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.32 . Memory (MB): peak = 1653.387 ; gain = 0.000 ; free physical = 539 ; free virtual = 1274
-INFO: [Common 17-206] Exiting Vivado at Sun Jul  8 08:49:49 2018...
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.34 . Memory (MB): peak = 1680.496 ; gain = 0.000 ; free physical = 306 ; free virtual = 1114
+INFO: [Common 17-206] Exiting Vivado at Sun Jul  8 14:30:13 2018...
