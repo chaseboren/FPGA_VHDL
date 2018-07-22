@@ -40,13 +40,13 @@ architecture Behavioral of accel_spi_rw is
   signal toSPIbytes : std_logic_vector (23 downto 0);
 
   signal timerstart : std_logic;
-  signal timerMax   : integer (100000 downto 0);
+  signal timerMax   : integer range 100000 to 0;
   signal timerDone  : std_logic;
-  signal timerCntr  : integer (100000 downto 0);
+  signal timerCntr  : integer range 100000 to 0;
 
   signal sclkint  : std_logic;
   signal CSbint   : std_logic;
-  signal sclkCntr : integer (23 downto 0);
+  signal sclkCntr : integer range 23 to 0;
 
   signal regX  : std_logic_vector (23 downto 0);
   signal regY  : std_logic_vector (23 downto 0);
@@ -61,13 +61,14 @@ architecture Behavioral of accel_spi_rw is
   signal sclk_rising  : std_logic;
 
   signal MOSIint : std_logic;
+  signal incSclk : std_logic;
 
+begin
   commandFSMtransitions : process (SPIdone)
   begin
     next_state <= command_state;
     case command_state is
-
-      when idlecmd     => (next_state <= writeAddr2D);
+      when idlecmd     => next_state <= writeAddr2D;
       when writeAddr2D =>
         if (SPIdone = '1') then
           next_state <= doneStartup;
@@ -80,7 +81,7 @@ architecture Behavioral of accel_spi_rw is
         if (SPIdone = '1') then
           next_state <= captureID_AD;
         else
-          next_state <= readAddr00      -- hold
+          next_state <= readAddr00;      -- hold
         end if;
       when captureID_AD =>
         next_state <= readAddr01;
@@ -140,7 +141,7 @@ architecture Behavioral of accel_spi_rw is
         toSPIbytes <= (others => '0');
       when doneStartup =>
         SPIstart   <= '1';
-        toSPIbytes <= x"0B00000";
+        toSPIbytes <= x"0B0000";
       when readAddr00 =>
         SPIstart   <= '0';
         toSPIbytes <= (others => '0');
@@ -231,9 +232,9 @@ architecture Behavioral of accel_spi_rw is
   SPI_FSMregister : process(clk, reset)
   begin
     if (reset = '1') then
-      SPI_state <= idle;
+      SPI_state <= idlespi;
     elsif (rising_edge(clk)) then
-      SPI_state <= SPI_next_state
+      SPI_state <= SPI_next_state;
     end if;
   end process;
 
@@ -332,7 +333,7 @@ architecture Behavioral of accel_spi_rw is
     elsif rising_edge(clk) then
       if CSbint = '0' then  -- this resets the counter/keeps counter zero when not driving SCLK
         sclkCntr <= 0;
-      elsif incSclkCntr = '1' then
+      elsif incSclk = '1' then
         sclkCntr <= sclkCntr + 1;
 
       end if;
@@ -383,7 +384,7 @@ architecture Behavioral of accel_spi_rw is
   MOSI_register : process(clk)  --reset accomplished in commandFSMregister (idlecmd)
   begin
     if rising_edge(clk) then
-      if ((command_state = idle) or (command_state = doneStartup) or
+      if ((command_state = idlecmd) or (command_state = doneStartup) or
           (command_state = captureID_AD) or (command_state = captureID_1D) or
           (command_state = captureX) or (command_state = captureY) or
           (command_state = captureZ)) then             --read in toSPIbytes
@@ -410,4 +411,5 @@ architecture Behavioral of accel_spi_rw is
   timerDone <= '1' when timerCntr = timerMax else '0';
   MOSI      <= MOSIint;
   SCLK      <= sclkint;
-end Behavioral;
+  CSb <= CSbint;
+end architecture;

@@ -54,7 +54,7 @@ architecture lab5_top of lab5_top is
   signal btnDBDint : std_logic;
 
   constant twentyfivemhzmaxCount : unsigned (1 downto 0) := "11";
-  signal   en25                  : std_logic;
+  signal en25                    : std_logic;
 
   signal horizontal_counter       : unsigned (9 downto 0);
   signal vertical_counter         : unsigned (9 downto 0);
@@ -87,12 +87,12 @@ architecture lab5_top of lab5_top is
 
   constant displayzero : std_logic_vector (3 downto 0) := "0000";  --used for five of the eight digits
 
-  constant h_period  : integer := h_pulse + h_bp + h_pixels + h_fp;
-  constant v_period  : integer := v_pulse + v_bp + v_pixels + v_fp;
-  signal   vga_A     : std_logic;
-  signal   vga_RED   : std_logic;
-  signal   vga_GREEN : std_logic;
-  signal   vga_BLUE  : std_logic;
+  constant h_period : integer := h_pulse + h_bp + h_pixels + h_fp;
+  constant v_period : integer := v_pulse + v_bp + v_pixels + v_fp;
+  signal vga_A      : std_logic;
+  signal vga_RED    : std_logic;
+  signal vga_GREEN  : std_logic;
+  signal vga_BLUE   : std_logic;
 
   signal upperdigitsel : std_logic_vector(1 downto 0);
 
@@ -120,6 +120,8 @@ architecture lab5_top of lab5_top is
   signal Y_filteredpos : std_logic;
   signal YDBpos        : std_logic;
 
+  signal pos_source : std_logic;
+
 begin
   btnDebounce_U : entity btnDebounce
     port map (
@@ -146,27 +148,27 @@ begin
       btnDB => btnDBR
       );
 
-  Debounce_X_pos : btnDebounce
+  Debounce_X_pos : entity btnDebounce
     port map (
       clk   => clk,
       btn   => X_filteredpos,
       btnDB => XDBpos
       );
 
-  Debounce_Y : btnDebounce
+  Debounce_Y_pos : entity btnDebounce
     port map (
       clk   => clk,
       btn   => Y_filteredpos,
       btnDB => YDBpos
       );
-  Debounce_X_neg : btnDebounce
+  Debounce_X_neg : entity btnDebounce
     port map (
       clk   => clk,
       btn   => X_filteredneg,
       btnDB => XDBneg
       );
 
-  Debounce_Y_neg : btnDebounce
+  Debounce_Y_neg : entity btnDebounce
     port map (
       clk   => clk,
       btn   => Y_filteredneg,
@@ -362,21 +364,21 @@ begin
   upperdigitsel <= SW(4 downto 3);
 
   -- LED seg 7 display driver
-  q7 <= ID_1D(7 downto 4) when upperdigitsel = '00' else
+  q7 <= ID_1D(7 downto 4) when upperdigitsel = "00" else
         displayzero;
 
-  q6 <= ID_1D(3 downto 0) when upperdigitsel = '00'else
+  q6 <= ID_1D(3 downto 0) when upperdigitsel = "00"else
         displayzero;
 
-  q5 <= ID_AD(7 downto 4) when upperdigitsel = '00'else
-        DATA_X(7 downto 4) when upperdigitsel = '01' else
-        DATA_Y(7 downto 4) when upperdigitsel = '10' else
-        DATA_Z(7 downto 4) when upperdigitsel = '11';
+  q5 <= ID_AD(7 downto 4) when upperdigitsel = "00" else
+        DATA_X(7 downto 4) when upperdigitsel = "01" else
+        DATA_Y(7 downto 4) when upperdigitsel = "10" else
+        DATA_Z(7 downto 4) when upperdigitsel = "11";
 
-  q4 <= ID_AD(3 downto 0) when upperdigitsel = '00'else
-        DATA_X(3 downto 0) when upperdigitsel = '01' else
-        DATA_Y(3 downto 0) when upperdigitsel = '10' else
-        DATA_Z(3 downto 0) when upperdigitsel = '11';
+  q4 <= ID_AD(3 downto 0) when upperdigitsel = "00" else
+        DATA_X(3 downto 0) when upperdigitsel = "01" else
+        DATA_Y(3 downto 0) when upperdigitsel = "10" else
+        DATA_Z(3 downto 0) when upperdigitsel = "11";
   q0 <= std_logic_vector(ypos(3 downto 0));
   q2 <= std_logic_vector(xpos(3 downto 0));
   q3 <= "0000" when xpos <= x"0F" else "0001";
