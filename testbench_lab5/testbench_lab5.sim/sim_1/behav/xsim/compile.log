@@ -1,0 +1,95 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/acl_model_v2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity acl_model
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+ERROR: [VRFC 10-460] cannot read from 'out' object sclk ; use 'buffer' or 'inout' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd:357]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd:28]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb

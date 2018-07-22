@@ -13,7 +13,7 @@ entity accel_spi_rw is
   port (clk    : in  std_logic;
         reset  : in  std_logic;
         --Values from accelerometer used for movement and display
-        DATA_X : out STD_LOGIC_VECTOR(7 downto 0);
+        DATA_X : out std_logic_vector(7 downto 0);
         DATA_Y : out std_logic_vector(7 downto 0);
         DATA_Z : out std_logic_vector(7 downto 0);
         ID_AD  : out std_logic_vector(7 downto 0);
@@ -40,13 +40,13 @@ architecture Behavioral of accel_spi_rw is
   signal toSPIbytes : std_logic_vector (23 downto 0);
 
   signal timerstart : std_logic;
-  signal timerMax   : integer range 100000 to 0;
+  signal timerMax   : integer range 0 to 100000;
   signal timerDone  : std_logic;
-  signal timerCntr  : integer range 100000 to 0;
+  signal timerCntr  : integer range 0 to 100000;
 
   signal sclkint  : std_logic;
   signal CSbint   : std_logic;
-  signal sclkCntr : integer range 23 to 0;
+  signal sclkCntr : integer range 0 to 24;
 
   signal regX  : std_logic_vector (23 downto 0);
   signal regY  : std_logic_vector (23 downto 0);
@@ -64,11 +64,11 @@ architecture Behavioral of accel_spi_rw is
   signal incSclk : std_logic;
 
 begin
-  commandFSMtransitions : process (SPIdone)
+  commandFSMtransitions : process (SPIdone, command_state)
   begin
     next_state <= command_state;
     case command_state is
-      when idlecmd     => next_state <= writeAddr2D;
+      when idlecmd => next_state <= writeAddr2D;
       when writeAddr2D =>
         if (SPIdone = '1') then
           next_state <= doneStartup;
@@ -81,7 +81,7 @@ begin
         if (SPIdone = '1') then
           next_state <= captureID_AD;
         else
-          next_state <= readAddr00;      -- hold
+          next_state <= readAddr00;     -- hold
         end if;
       when captureID_AD =>
         next_state <= readAddr01;
@@ -179,7 +179,7 @@ begin
     end case;
   end process;
 
-  SPI_FSMtransitions : process(SPIstart)
+  SPI_FSMtransitions : process(SPIstart, SPI_state, timerDone, sclkCntr)
   begin
     SPI_next_state <= SPI_state;
     case SPI_state is
@@ -211,7 +211,7 @@ begin
       when incSclkCntr =>
         SPI_next_state <= checkSclkCntr;
       when checkSclkCntr =>
-        if sclkCntr = 23 then
+        if sclkCntr = 24 then
           SPI_next_state <= setCShi;
         else
           SPI_next_state <= sclkHi;
@@ -243,16 +243,16 @@ begin
     case SPI_state is
       when idlespi =>
         CSbint     <= '1';
-        timerstart <= '1';
-        timerMax   <= 19;
+        timerstart <= '0';
+        timerMax   <= 0;
         sclkint    <= '0';
         incSclk    <= '0';
         SPIdone    <= '0';
 
       when setCSlow =>
         CSbint     <= '0';
-        timerstart <= '0';
-        timerMax   <= 0;
+        timerstart <= '1';
+        timerMax   <= 19;
         sclkint    <= '0';
         incSclk    <= '0';
         SPIdone    <= '0';
@@ -270,7 +270,7 @@ begin
         timerstart <= '1';
         timerMax   <= 47;
         sclkint    <= '0';
-        sclkCntr   <= 0;
+        incSclk    <= '0';
         SPIdone    <= '0';
 
       when incSclkCntr =>
@@ -331,7 +331,7 @@ begin
     if reset = '1' then
       sclkCntr <= 0;
     elsif rising_edge(clk) then
-      if CSbint = '0' then  -- this resets the counter/keeps counter zero when not driving SCLK
+      if CSbint = '1' then  -- this resets the counter/keeps counter zero when not driving SCLK
         sclkCntr <= 0;
       elsif incSclk = '1' then
         sclkCntr <= sclkCntr + 1;
@@ -345,7 +345,7 @@ begin
   sclk_rising  <= not sclk_d and sclkint;
   sclk_falling <= sclk_d and not sclkint;
 
-  MISO_register : process(clk , reset)
+  MISO_register : process(clk, reset)
   begin
     if reset = '1' then                 --take all inputs to zero
       regX  <= (others => '0');
@@ -354,22 +354,26 @@ begin
       reg1D <= (others => '0');
       regAD <= (others => '0');
     elsif rising_edge(clk) then
-      if sclk_falling = '1' then
-        if command_state = readAddr00 then
-          regAD(0)            <= MISO;
-          regAD (23 downto 1) <= regAD(22 downto 0);
-        elsif command_state = readAddr01 then
-          reg1D(0)            <= MISO;
-          reg1D (23 downto 1) <= reg1D(22 downto 0);
-        elsif command_state = readAddr08 then
-          regX(0)            <= MISO;
-          regX (23 downto 1) <= regX(22 downto 0);
-        elsif command_state = readAddr09 then
-          regY(0)            <= MISO;
-          regY (23 downto 1) <= regY(22 downto 0);
-        elsif command_state = readAddr0A then
-          regZ(0)            <= MISO;
-          regZ (23 downto 1) <= regZ(22 downto 0);
+      if sclkint = '0' then
+        if SPI_state = checkSclkCntr then
+          if sclkCntr < 24 then
+            if command_state = readAddr00 then
+              regAD(0)            <= MISO;
+              regAD (23 downto 1) <= regAD(22 downto 0);
+            elsif command_state = readAddr01 then
+              reg1D(0)            <= MISO;
+              reg1D (23 downto 1) <= reg1D(22 downto 0);
+            elsif command_state = readAddr08 then
+              regX(0)            <= MISO;
+              regX (23 downto 1) <= regX(22 downto 0);
+            elsif command_state = readAddr09 then
+              regY(0)            <= MISO;
+              regY (23 downto 1) <= regY(22 downto 0);
+            elsif command_state = readAddr0A then
+              regZ(0)            <= MISO;
+              regZ (23 downto 1) <= regZ(22 downto 0);
+            end if;
+          end if;
         end if;
       end if;
     end if;
@@ -384,12 +388,14 @@ begin
   MOSI_register : process(clk)  --reset accomplished in commandFSMregister (idlecmd)
   begin
     if rising_edge(clk) then
-      if ((command_state = idlecmd) or (command_state = doneStartup) or
-          (command_state = captureID_AD) or (command_state = captureID_1D) or
-          (command_state = captureX) or (command_state = captureY) or
-          (command_state = captureZ)) then             --read in toSPIbytes
+      if (SPIstart = '1') then          --read in toSPIbytes
         SPI_shiftregister <= toSPIbytes;
-      elsif sclk_rising = '1' then
+      elsif SPI_state = setCSlow then
+        if timerDone = '1' then
+          MOSIint                         <= SPI_shiftregister(23);
+          SPI_shiftregister (23 downto 1) <= SPI_shiftregister (22 downto 0);
+        end if;
+      elsif SPI_state = checkSclkCntr then
         MOSIint                         <= SPI_shiftregister(23);
         SPI_shiftregister (23 downto 1) <= SPI_shiftregister (22 downto 0);
       end if;
@@ -402,7 +408,11 @@ begin
       timerCntr <= 0;
     elsif rising_edge(clk) then
       if timerstart = '1' then
-        timerCntr <= timerCntr + 1;
+        if timerCntr < timerMax then
+          timerCntr <= timerCntr + 1;
+        else
+          timerCntr <= 0;
+        end if;
       else
         timerCntr <= 0;
       end if;
@@ -411,5 +421,5 @@ begin
   timerDone <= '1' when timerCntr = timerMax else '0';
   MOSI      <= MOSIint;
   SCLK      <= sclkint;
-  CSb <= CSbint;
+  CSb       <= CSbint;
 end architecture;

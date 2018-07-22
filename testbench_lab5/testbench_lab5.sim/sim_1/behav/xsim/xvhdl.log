@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity accel_spi_rw_tb

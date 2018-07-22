@@ -1,0 +1,7 @@
+0.6
+2018.1
+Apr  4 2018
+18:43:17
+/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd,1532260945,vhdl,/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd,,,accel_spi_rw,,,,,,,,
+/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd,1532230733,vhdl,,,,accel_spi_rw_tb,,,,,,,,
+/home/chase/github/FPGA_VHDL/testbench_lab5/acl_model_v2.vhd,1532230733,vhdl,/home/chase/github/FPGA_VHDL/testbench_lab5/accel_spi_rw_tb.vhd,,,acl_model,,,,,,,,
