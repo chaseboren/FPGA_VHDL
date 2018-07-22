@@ -106,8 +106,8 @@ architecture lab5_top of lab5_top is
   signal SCLK   : std_logic;
   signal MISO   : std_logic;
 
-  signal x_unfiltered : integer range -128 to 127;
-  signal y_unfiltered : integer range -128 to 127;
+  signal x_unfiltered : unsigned(7 downto 0);
+  signal y_unfiltered : unsigned(7 downto 0);
 
   signal X_filteredneg : std_logic;
   signal XDBneg        : std_logic;
@@ -120,6 +120,8 @@ architecture lab5_top of lab5_top is
   signal Y_filteredpos : std_logic;
   signal YDBpos        : std_logic;
 
+  signal X_flat : std_logic;
+  signal Y_flat : std_logic;
   signal pos_source : std_logic;
 
 begin
@@ -148,31 +150,35 @@ begin
       btnDB => btnDBR
       );
 
-  Debounce_X_pos : entity btnDebounce
+  Debounce_X_pos : entity accelDebounce
     port map (
       clk   => clk,
       btn   => X_filteredpos,
-      btnDB => XDBpos
+      btnDB => XDBpos,
+      axisflat => X_flat
       );
 
-  Debounce_Y_pos : entity btnDebounce
+  Debounce_Y_pos : entity accelDebounce
     port map (
       clk   => clk,
       btn   => Y_filteredpos,
-      btnDB => YDBpos
+      btnDB => YDBpos,
+      axisflat => Y_flat
       );
-  Debounce_X_neg : entity btnDebounce
+  Debounce_X_neg : entity accelDebounce
     port map (
       clk   => clk,
       btn   => X_filteredneg,
-      btnDB => XDBneg
+      btnDB => XDBneg,
+      axisflat => X_flat
       );
 
-  Debounce_Y_neg : entity btnDebounce
+  Debounce_Y_neg : entity accelDebounce
     port map (
       clk   => clk,
       btn   => Y_filteredneg,
-      btnDB => YDBneg
+      btnDB => YDBneg,
+      axisflat => Y_flat
       );
 
   pulse_generator_small_0 : entity pulse_generator_small
@@ -373,12 +379,14 @@ begin
   q5 <= ID_AD(7 downto 4) when upperdigitsel = "00" else
         DATA_X(7 downto 4) when upperdigitsel = "01" else
         DATA_Y(7 downto 4) when upperdigitsel = "10" else
-        DATA_Z(7 downto 4) when upperdigitsel = "11";
+        DATA_Z(7 downto 4) when upperdigitsel = "11" else
+          displayzero;
 
   q4 <= ID_AD(3 downto 0) when upperdigitsel = "00" else
         DATA_X(3 downto 0) when upperdigitsel = "01" else
         DATA_Y(3 downto 0) when upperdigitsel = "10" else
-        DATA_Z(3 downto 0) when upperdigitsel = "11";
+        DATA_Z(3 downto 0) when upperdigitsel = "11" else
+          displayzero;
   q0 <= std_logic_vector(ypos(3 downto 0));
   q2 <= std_logic_vector(xpos(3 downto 0));
   q3 <= "0000" when xpos <= x"0F" else "0001";
@@ -394,13 +402,17 @@ begin
   ACL_CSN  <= CSb;
   ACL_SCLK <= SCLK;
 
-  x_unfiltered <= to_integer(signed(DATA_X));  --makes the manipulation easier. output is 2s complement.
-  y_unfiltered <= to_integer(signed(DATA_Y));
+  x_unfiltered <= unsigned(DATA_X);  --makes the manipulation easier. output is 2s complement.
+  y_unfiltered <= unsigned(DATA_Y);
 
-  X_filteredpos <= '1' when x_unfiltered > 32  else '0';  --this is about 1/2 g
-  X_filteredneg <= '1' when x_unfiltered < -32 else '0';
+  X_filteredpos <= '1' when (x_unfiltered > x"BF") and (x_unfiltered < x"E0")  else '0';  --this is about 1/2 g
+  X_filteredneg <= '1' when (x_unfiltered > x"20") and (x_unfiltered < x"3F") else '0';
 
-  Y_filteredpos <= '1' when y_unfiltered > 32  else '0';
-  Y_filteredneg <= '1' when y_unfiltered < -32 else '0';
+  Y_filteredpos <= '1' when (y_unfiltered > x"BF") and (y_unfiltered < x"E0")  else '0';  --this is about 1/2 g
+  Y_filteredneg <= '1' when (y_unfiltered > x"20") and (y_unfiltered < x"4F") else '0';
+
+  X_flat <= '1' when (x_unfiltered > x"FE") or (x_unfiltered < x"01") else '0';
+  Y_flat <= '1' when (y_unfiltered > x"FE") or (y_unfiltered < x"01") else '0';
+
 
 end architecture;

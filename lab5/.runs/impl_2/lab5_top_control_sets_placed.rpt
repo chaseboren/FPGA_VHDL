@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date         : Sun Jul 22 08:33:06 2018
+| Date         : Sun Jul 22 18:27:30 2018
 | Host         : Vivado-dev running 64-bit Ubuntu 18.04 LTS
 | Command      : report_control_sets -verbose -file lab5_top_control_sets_placed.rpt
 | Design       : lab5_top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    29 |
-| Unused register locations in slices containing registers |    65 |
+| Number of unique control sets                            |    33 |
+| Unused register locations in slices containing registers |    81 |
 +----------------------------------------------------------+-------+
 
 
@@ -39,10 +39,10 @@ Table of Contents
 |      5 |            3 |
 |      7 |            2 |
 |      8 |            7 |
-|     10 |            1 |
 |     11 |            1 |
 |     13 |            1 |
-|    16+ |           10 |
+|     14 |            1 |
+|    16+ |           14 |
 +--------+--------------+
 
 
@@ -52,12 +52,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              10 |            9 |
-| No           | No                    | Yes                    |              66 |           21 |
+| No           | No                    | No                     |              14 |           14 |
+| No           | No                    | Yes                    |              66 |           23 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              34 |           15 |
-| Yes          | No                    | Yes                    |              45 |           14 |
-| Yes          | Yes                   | No                     |             244 |           68 |
+| Yes          | No                    | No                     |              34 |           16 |
+| Yes          | No                    | Yes                    |              45 |           13 |
+| Yes          | Yes                   | No                     |             320 |           90 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -67,35 +67,39 @@ Table of Contents
 +----------------------+------------------------------------------------+----------------------------------------------+------------------+----------------+
 |     Clock Signal     |                  Enable Signal                 |               Set/Reset Signal               | Slice Load Count | Bel Load Count |
 +----------------------+------------------------------------------------+----------------------------------------------+------------------+----------------+
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   | pulse_generator_small_0/VGA_VS_reg           |                1 |              1 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   | pulse_generator_small_0/VGA_HS_reg           |                1 |              1 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   | pulse_generator_small_0/VGA_VS_reg           |                1 |              1 |
 |  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/MOSIint                         |                                              |                1 |              1 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   | pulse_generator_small_0/h_count_reg[0]       |                1 |              4 |
 |  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/sclkCntr                        | LED_OBUF[0]                                  |                2 |              5 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/ypix_counter_reg[0][0] | pulse_generator_small_0/SR[0]                |                2 |              5 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/xpix_counter_reg[0][0] |                                              |                1 |              5 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/ypix_counter_reg[0][0] | pulse_generator_small_0/SR[0]                |                1 |              5 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/xpix_counter_reg[0][0] |                                              |                2 |              5 |
 |  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/E[0]                   | LED_OBUF[0]                                  |                4 |              7 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/ypos_reg[0][0]         | LED_OBUF[0]                                  |                3 |              7 |
-|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/regY                            | LED_OBUF[0]                                  |                3 |              8 |
-|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/regX                            | LED_OBUF[0]                                  |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/ypos_reg[0][0]         | LED_OBUF[0]                                  |                4 |              7 |
 |  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/reg1D                           | LED_OBUF[0]                                  |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/regAD[7]_i_1_n_0                | LED_OBUF[0]                                  |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/regX                            | LED_OBUF[0]                                  |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/xframe_reg[0][0]       | pulse_generator_small_0/h_count_reg[0]       |                3 |              8 |
+|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/regY                            | LED_OBUF[0]                                  |                3 |              8 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/yframe_reg[0][0]       | pulse_generator_small_0/yframe_reg[7][0]     |                2 |              8 |
 |  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/regZ                            | LED_OBUF[0]                                  |                2 |              8 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/xframe_reg[0][0]       | pulse_generator_small_0/h_count_reg[0]       |                2 |              8 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/yframe_reg[0][0]       | pulse_generator_small_0/yframe_reg[7][0]     |                3 |              8 |
-|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/regAD[7]_i_1_n_0                | LED_OBUF[0]                                  |                3 |              8 |
-|  CLK100MHZ_IBUF_BUFG |                                                |                                              |                9 |             10 |
-|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/SPI_shiftregister[19]_i_1_n_0   | accel_spi_rw_0/SPI_shiftregister[18]_i_1_n_0 |                3 |             11 |
-|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/SPI_shiftregister[19]_i_1_n_0   |                                              |                5 |             13 |
-|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   |                                              |                9 |             17 |
+|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/SPI_shiftregister[19]_i_1_n_0   | accel_spi_rw_0/SPI_shiftregister[18]_i_1_n_0 |                5 |             11 |
+|  CLK100MHZ_IBUF_BUFG | accel_spi_rw_0/SPI_shiftregister[19]_i_1_n_0   |                                              |                6 |             13 |
+|  CLK100MHZ_IBUF_BUFG |                                                |                                              |               14 |             14 |
+|  CLK100MHZ_IBUF_BUFG | pulse_generator_small_0/en25                   |                                              |                8 |             17 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_Y_pos/counter2[0]_i_2__1_n_0          | Debounce_Y_pos/counter2                      |                5 |             19 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_X_neg/counter2[0]_i_2__0_n_0          | Debounce_X_neg/counter2                      |                5 |             19 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_X_pos/counter2[0]_i_2_n_0             | Debounce_X_pos/counter2                      |                5 |             19 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_Y_neg/counter2[0]_i_2__2_n_0          | Debounce_Y_neg/counter2                      |                5 |             19 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_Y_neg/counter[0]_i_2__6_n_0           | accel_spi_rw_0/counter_reg[23]_4             |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG | btnDebounce_L/counter[0]_i_2__0_n_0            | btnDebounce_L/counter[0]_i_1__4_n_0          |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_X_pos/counter[0]_i_2__3_n_0           | accel_spi_rw_0/counter_reg[23]               |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG | btnDebounce_D/counter[0]_i_2__1_n_0            | btnDebounce_D/counter[0]_i_1__5_n_0          |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_X_neg/counter[0]_i_2__5_n_0           | accel_spi_rw_0/counter_reg[23]_0             |                6 |             24 |
 |  CLK100MHZ_IBUF_BUFG | btnDebounce_U/counter[0]_i_2_n_0               | btnDebounce_U/clear                          |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG | Debounce_Y_pos/counter[0]_i_2__4_n_0           | accel_spi_rw_0/counter_reg[0]_0              |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG | btnDebounce_L/counter[0]_i_2__0_n_0            | btnDebounce_L/counter[0]_i_1__0_n_0          |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG | btnDebounce_D/counter[0]_i_2__1_n_0            | btnDebounce_D/counter[0]_i_1__1_n_0          |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG | btnDebounce_R/counter[0]_i_2__2_n_0            | btnDebounce_R/counter[0]_i_1__2_n_0          |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG | Debounce_Y_neg/counter[0]_i_2__6_n_0           | accel_spi_rw_0/counter_reg[0]_3              |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG | Debounce_X_pos/counter[0]_i_2__3_n_0           | accel_spi_rw_0/counter_reg[0]                |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG | Debounce_X_neg/counter[0]_i_2__5_n_0           | accel_spi_rw_0/counter_reg[0]_2              |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG |                                                | LED_OBUF[0]                                  |               21 |             66 |
+|  CLK100MHZ_IBUF_BUFG | Debounce_Y_pos/counter[0]_i_2__4_n_0           | accel_spi_rw_0/counter_reg[23]_2             |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG | btnDebounce_R/counter[0]_i_2__2_n_0            | btnDebounce_R/counter[0]_i_1__6_n_0          |                6 |             24 |
+|  CLK100MHZ_IBUF_BUFG |                                                | LED_OBUF[0]                                  |               23 |             66 |
 +----------------------+------------------------------------------------+----------------------------------------------+------------------+----------------+
 
 

@@ -31,6 +31,7 @@ set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
 set_property ip_output_repo /home/chase/github/FPGA_VHDL/lab5/.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
+  /home/chase/github/FPGA_VHDL/lab5/lab5.srcs/accelDebounce.vhd
   /home/chase/github/FPGA_VHDL/lab5/lab5.srcs/btnDebounce.vhd
   /home/chase/github/FPGA_VHDL/lab5/lab5.srcs/pulse_generator_small.vhd
   /home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd

@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11998 
+INFO: Helper process launched with PID 29984 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1293.016 ; gain = 86.926 ; free physical = 1611 ; free virtual = 5093
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1293.012 ; gain = 86.926 ; free physical = 1415 ; free virtual = 4954
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'lab5_top' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/lab5_top.vhd:45]
 	Parameter h_pulse bound to: 96 - type: integer 
@@ -30,22 +30,24 @@ INFO: [Synth 8-638] synthesizing module 'lab5_top' [/home/chase/github/FPGA_VHDL
 	Parameter v_fp bound to: 10 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'btnDebounce' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/btnDebounce.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'btnDebounce' (1#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/btnDebounce.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'accelDebounce' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/accelDebounce.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'accelDebounce' (2#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/accelDebounce.vhd:15]
 INFO: [Synth 8-638] synthesizing module 'pulse_generator_small' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/pulse_generator_small.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'pulse_generator_small' (2#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/pulse_generator_small.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'pulse_generator_small' (3#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/pulse_generator_small.vhd:12]
 INFO: [Synth 8-638] synthesizing module 'accel_spi_rw' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd:28]
 WARNING: [Synth 8-6014] Unused sequential element sclk_d_reg was removed.  [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd:344]
-INFO: [Synth 8-256] done synthesizing module 'accel_spi_rw' (3#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'accel_spi_rw' (4#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/spi.vhd:28]
 INFO: [Synth 8-638] synthesizing module 'seg7_controller' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/seg7_controller.vhd:21]
 INFO: [Synth 8-638] synthesizing module 'pulse_generator' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/pulse_generator.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'pulse_generator' (4#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/pulse_generator.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'pulse_generator' (5#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/pulse_generator.vhd:12]
 INFO: [Synth 8-638] synthesizing module 'upCounter' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/upcounter.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'upCounter' (5#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/upcounter.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'upCounter' (6#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/upcounter.vhd:14]
 INFO: [Synth 8-638] synthesizing module 'seg7_hex' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/seg7_hex.vhd:32]
-INFO: [Synth 8-256] done synthesizing module 'seg7_hex' (6#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/seg7_hex.vhd:32]
-INFO: [Synth 8-256] done synthesizing module 'seg7_controller' (7#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/seg7_controller.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'lab5_top' (8#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/lab5_top.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'seg7_hex' (7#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/seg7_hex.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'seg7_controller' (8#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/seg7_controller.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'lab5_top' (9#1) [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/lab5_top.vhd:45]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1338.625 ; gain = 132.535 ; free physical = 1620 ; free virtual = 5102
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1338.621 ; gain = 132.535 ; free physical = 1424 ; free virtual = 4963
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -58,10 +60,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1338.625 ; gain = 132.535 ; free physical = 1620 ; free virtual = 5102
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1338.621 ; gain = 132.535 ; free physical = 1423 ; free virtual = 4963
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1338.625 ; gain = 132.535 ; free physical = 1620 ; free virtual = 5102
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1338.621 ; gain = 132.535 ; free physical = 1423 ; free virtual = 4963
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -77,23 +79,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1655.918 ; gain = 0.000 ; free physical = 1354 ; free virtual = 4837
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1656.375 ; gain = 0.000 ; free physical = 1179 ; free virtual = 4718
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:56 . Memory (MB): peak = 1655.918 ; gain = 449.828 ; free physical = 1436 ; free virtual = 4919
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:49 . Memory (MB): peak = 1656.375 ; gain = 450.289 ; free physical = 1261 ; free virtual = 4800
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:56 . Memory (MB): peak = 1655.918 ; gain = 449.828 ; free physical = 1436 ; free virtual = 4919
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:49 . Memory (MB): peak = 1656.375 ; gain = 450.289 ; free physical = 1261 ; free virtual = 4800
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:56 . Memory (MB): peak = 1655.918 ; gain = 449.828 ; free physical = 1436 ; free virtual = 4918
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:49 . Memory (MB): peak = 1656.375 ; gain = 450.289 ; free physical = 1262 ; free virtual = 4802
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "counter" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'command_state_reg' in module 'accel_spi_rw'
 INFO: [Synth 8-5546] ROM "SPI_next_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "regAD" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -123,10 +126,8 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
                 capturez |                    1000000000000 |                             1100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'command_state_reg' using encoding 'one-hot' in module 'accel_spi_rw'
-WARNING: [Synth 8-327] inferring latch for variable 'q4_reg' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/lab5_top.vhd:209]
-WARNING: [Synth 8-327] inferring latch for variable 'q5_reg' [/home/chase/github/FPGA_VHDL/lab5/lab5.srcs/lab5_top.vhd:210]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:56 . Memory (MB): peak = 1655.918 ; gain = 449.828 ; free physical = 1428 ; free virtual = 4911
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:50 . Memory (MB): peak = 1656.375 ; gain = 450.289 ; free physical = 1254 ; free virtual = 4794
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -155,7 +156,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 14    
+	                1 Bit    Registers := 18    
 +---Muxes : 
 	   2 Input     24 Bit        Muxes := 2     
 	   2 Input     23 Bit        Muxes := 1     
@@ -172,14 +173,14 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit        Muxes := 9     
 	   2 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
-	   4 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 20    
+	   2 Input      1 Bit        Muxes := 52    
+	   3 Input      1 Bit        Muxes := 6     
 	  10 Input      1 Bit        Muxes := 10    
 	  11 Input      1 Bit        Muxes := 1     
 	  13 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 1     
@@ -207,8 +208,8 @@ Detailed RTL Component Info :
 	   8 Input     12 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 9     
 	   2 Input      8 Bit        Muxes := 9     
+	   5 Input      4 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 2     
-	   4 Input      4 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 6     
 Module btnDebounce 
 Detailed RTL Component Info : 
@@ -216,6 +217,13 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
+Module accelDebounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 1     
 Module pulse_generator_small 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -283,14 +291,6 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accel_spi_rw_0/SPI_shiftregister_reg[0] )
-WARNING: [Synth 8-3332] Sequential element (q4_reg[3]) is unused and will be removed from module lab5_top.
-WARNING: [Synth 8-3332] Sequential element (q4_reg[2]) is unused and will be removed from module lab5_top.
-WARNING: [Synth 8-3332] Sequential element (q4_reg[1]) is unused and will be removed from module lab5_top.
-WARNING: [Synth 8-3332] Sequential element (q4_reg[0]) is unused and will be removed from module lab5_top.
-WARNING: [Synth 8-3332] Sequential element (q5_reg[3]) is unused and will be removed from module lab5_top.
-WARNING: [Synth 8-3332] Sequential element (q5_reg[2]) is unused and will be removed from module lab5_top.
-WARNING: [Synth 8-3332] Sequential element (q5_reg[1]) is unused and will be removed from module lab5_top.
-WARNING: [Synth 8-3332] Sequential element (q5_reg[0]) is unused and will be removed from module lab5_top.
 WARNING: [Synth 8-3332] Sequential element (accel_spi_rw_0/regX_reg[23]) is unused and will be removed from module lab5_top.
 WARNING: [Synth 8-3332] Sequential element (accel_spi_rw_0/regX_reg[22]) is unused and will be removed from module lab5_top.
 WARNING: [Synth 8-3332] Sequential element (accel_spi_rw_0/regX_reg[21]) is unused and will be removed from module lab5_top.
@@ -375,7 +375,7 @@ WARNING: [Synth 8-3332] Sequential element (accel_spi_rw_0/SPI_shiftregister_reg
 WARNING: [Synth 8-3332] Sequential element (xpos_reg[7]) is unused and will be removed from module lab5_top.
 WARNING: [Synth 8-3332] Sequential element (ypos_reg[7]) is unused and will be removed from module lab5_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:01:00 . Memory (MB): peak = 1655.918 ; gain = 449.828 ; free physical = 1407 ; free virtual = 4892
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:54 . Memory (MB): peak = 1656.375 ; gain = 450.289 ; free physical = 1233 ; free virtual = 4775
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -387,13 +387,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:01:13 . Memory (MB): peak = 1655.918 ; gain = 449.828 ; free physical = 1285 ; free virtual = 4769
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:01:06 . Memory (MB): peak = 1656.375 ; gain = 450.289 ; free physical = 1110 ; free virtual = 4652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:01:15 . Memory (MB): peak = 1673.926 ; gain = 467.836 ; free physical = 1261 ; free virtual = 4746
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:01:08 . Memory (MB): peak = 1682.914 ; gain = 476.828 ; free physical = 1080 ; free virtual = 4622
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -405,7 +405,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:01:15 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4743
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:01:08 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1077 ; free virtual = 4619
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -429,7 +429,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4742
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1078 ; free virtual = 4620
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -442,7 +442,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4742
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1078 ; free virtual = 4620
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -454,25 +454,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4742
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1078 ; free virtual = 4620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4742
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1078 ; free virtual = 4620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4742
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1078 ; free virtual = 4620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4742
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1078 ; free virtual = 4620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -504,18 +504,18 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    64|
-|3     |LUT1   |    19|
-|4     |LUT2   |    34|
-|5     |LUT3   |    38|
-|6     |LUT4   |    72|
-|7     |LUT5   |    80|
-|8     |LUT6   |   137|
+|2     |CARRY4 |    84|
+|3     |LUT1   |    23|
+|4     |LUT2   |    40|
+|5     |LUT3   |    42|
+|6     |LUT4   |   102|
+|7     |LUT5   |    75|
+|8     |LUT6   |   173|
 |9     |MUXF7  |     1|
 |10    |SRL16E |     2|
 |11    |FDCE   |   110|
 |12    |FDPE   |     1|
-|13    |FDRE   |   288|
+|13    |FDRE   |   368|
 |14    |IBUF   |    11|
 |15    |OBUF   |    38|
 +------+-------+------+
@@ -524,29 +524,29 @@ Report Instance Areas:
 +------+--------------------------+----------------------+------+
 |      |Instance                  |Module                |Cells |
 +------+--------------------------+----------------------+------+
-|1     |top                       |                      |   896|
-|2     |  Debounce_X_neg          |btnDebounce           |    52|
-|3     |  Debounce_X_pos          |btnDebounce_0         |    42|
-|4     |  Debounce_Y_neg          |btnDebounce_1         |    43|
-|5     |  Debounce_Y_pos          |btnDebounce_2         |    42|
-|6     |  accel_spi_rw_0          |accel_spi_rw          |   222|
-|7     |  btnDebounce_D           |btnDebounce_3         |    44|
-|8     |  btnDebounce_L           |btnDebounce_4         |    55|
-|9     |  btnDebounce_R           |btnDebounce_5         |    44|
-|10    |  btnDebounce_U           |btnDebounce_6         |    44|
+|1     |top                       |                      |  1071|
+|2     |  Debounce_X_neg          |accelDebounce         |    91|
+|3     |  Debounce_X_pos          |accelDebounce_0       |    85|
+|4     |  Debounce_Y_neg          |accelDebounce_1       |    85|
+|5     |  Debounce_Y_pos          |accelDebounce_2       |    85|
+|6     |  accel_spi_rw_0          |accel_spi_rw          |   227|
+|7     |  btnDebounce_D           |btnDebounce           |    44|
+|8     |  btnDebounce_L           |btnDebounce_3         |    53|
+|9     |  btnDebounce_R           |btnDebounce_4         |    44|
+|10    |  btnDebounce_U           |btnDebounce_5         |    44|
 |11    |  pulse_generator_small_0 |pulse_generator_small |    19|
-|12    |  seg7_controller_0       |seg7_controller       |    82|
+|12    |  seg7_controller_0       |seg7_controller       |    84|
 |13    |    pulse_generator_0     |pulse_generator       |    48|
-|14    |    upCounter_0           |upCounter             |    34|
+|14    |    upCounter_0           |upCounter             |    36|
 +------+--------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.934 ; gain = 468.844 ; free physical = 1258 ; free virtual = 4742
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.922 ; gain = 484.836 ; free physical = 1078 ; free virtual = 4621
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 93 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:45 . Memory (MB): peak = 1674.934 ; gain = 151.551 ; free physical = 1314 ; free virtual = 4799
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:01:16 . Memory (MB): peak = 1674.941 ; gain = 468.844 ; free physical = 1324 ; free virtual = 4809
+Synthesis finished with 0 errors, 0 critical warnings and 83 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 1690.922 ; gain = 167.082 ; free physical = 1133 ; free virtual = 4676
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:01:09 . Memory (MB): peak = 1690.930 ; gain = 484.836 ; free physical = 1144 ; free virtual = 4686
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 76 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 96 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -554,10 +554,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-41 Infos, 94 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 84 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:01:18 . Memory (MB): peak = 1674.941 ; gain = 481.379 ; free physical = 1320 ; free virtual = 4805
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:01:11 . Memory (MB): peak = 1690.930 ; gain = 497.371 ; free physical = 1147 ; free virtual = 4689
 INFO: [Common 17-1381] The checkpoint '/home/chase/github/FPGA_VHDL/lab5/.runs/synth_1/lab5_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file lab5_top_utilization_synth.rpt -pb lab5_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1674.941 ; gain = 0.000 ; free physical = 1321 ; free virtual = 4806
-INFO: [Common 17-206] Exiting Vivado at Sun Jul 22 08:31:36 2018...
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1690.930 ; gain = 0.000 ; free physical = 1146 ; free virtual = 4688
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 22 18:26:08 2018...
