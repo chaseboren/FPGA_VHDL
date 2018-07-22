@@ -2,8 +2,12 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 use work.all;
-
-
+--Requires pulse_generator_small, pulse_generator seg7_controller, seg7_hex,
+--upCounter, btnDebounce.
+--implements a VGA display driver with a blue-green checkeboard and with a moving red cursor.
+--The use of GENERIC for integer cosntants and their expression in the process was significantly influenced by
+--a 1920x1080 vga_conntroller design by Scott Larson for Digi-key,
+--available at https://eewiki.net/download/attachments/15925278/vga_controller.vhd?version=2&modificationDate=1520463067550&api=v2
 entity lab4_top is
   generic(h_pulse  : integer := 96;
           h_bp     : integer := 48;
@@ -66,7 +70,7 @@ architecture Behavioral of lab4_top is
 
   signal clk   : std_logic;
   signal reset : std_logic;
-  signal q0    : std_logic_vector (3 downto 0);
+  signal q0    : std_logic_vector (3 downto 0);--for seg 7 controller for LEDs. the other register are fed zeroes.
   signal q2    : std_logic_vector (3 downto 0);
   signal q3    : std_logic_vector (3 downto 0);
   signal anode : std_logic_vector (7 downto 0);
@@ -113,7 +117,7 @@ begin
       maxCount => twentyfivemhzmaxCount,
       pulseOut => en25
       );
---  vertical_upCounter_0 : entity vertical_upCounter
+--  vertical_upCounter_0 : entity vertical_upCounter Leftover from unused attempt.
   --  port map (
   --    clk     => CLK100MHZ,
   --    reset   => reset,
@@ -146,7 +150,7 @@ begin
 
 
 
-  process(clk)
+  process(clk, reset)
     variable xpix_counter : unsigned (4 downto 0)          := "00000";
     variable ypix_counter : unsigned (4 downto 0)          := "00000";
     variable h_count      : integer range 0 to h_period -1 := 0;
@@ -166,13 +170,13 @@ begin
       if en25 = '1' then
         if h_count < h_period - 1 then
           h_count    := h_count + 1;
-          if h_count <= h_pixels then
+          if h_count <= h_pixels then --deviation from the vga_controller by Scott Larson. Corrected some "side-scrolling" issue by setting <= vice <
             xpix_counter := xpix_counter + 1;  --cheating some what  and letting it wraparound since unsigned.
-            if xpix_counter = "00000" then
-              xframe        <= xframe + 1;
-              xcheckerboard <= not xcheckerboard;
+            if xpix_counter = "00000" then --increment sqyare
+              xframe        <= xframe + 1; --used in deciding which "square" the draw is in
+              xcheckerboard <= not xcheckerboard; -- used to drive blue-green logic.
             end if;
---          else
+--          else  not needed due to going equal to in h_count <= h_pixels.
 --            xpix_counter := "00000";
           end if;
         else
@@ -182,9 +186,9 @@ begin
             v_count := v_count + 1;
             if v_count < v_pixels then
               ypix_counter := ypix_counter + 1;  --cheating some what  and letting it wraparound since unsigned.
-              if ypix_counter = "00000" then
-                yframe        <= yframe + 1;
-                ycheckerboard <= not ycheckerboard;
+              if ypix_counter = "00000" then --resets every new square.
+                yframe        <= yframe + 1;  --used in deciding which square the draw is in
+                ycheckerboard <= not ycheckerboard; --used to drive the blue green logic.
               end if;
             else
               ypix_counter := "00000";
@@ -261,11 +265,13 @@ begin
     x"0F0" when "1000",
     x"00F" when "1010",
     x"00F" when "1001",
-    x"000" when others;                 --paint it black
+    x"000" when others;     --paint it black
 
   VGA_R <= vga_REDGREENBLUE (11 downto 8);
   VGA_G <= vga_REDGREENBLUE (7 downto 4);
   VGA_B <= vga_REDGREENBLUE (3 downto 0);
+
+-- artifacts from unsuccessful attempts
 --    VGA_R <= (vga_A & vga_A & vga_A & vga_A) and "1111";
 --  VGA_G <= (vga_A & vga_A & vga_A & vga_A) and"1111";
 --  VGA_B <= (vga_A & vga_A & vga_A & vga_A) and "1111";
@@ -276,12 +282,12 @@ begin
 --cursor matching
   vga_RED <= '1' when (yframe = ypos) and (xframe = xpos) else '0';
 
-  vga_BLUE <= xcheckerboard;            --arbitrary which is x which is y
+  vga_BLUE <= xcheckerboard;  --arbitrary which is x which is y
 
   vga_GREEN <= ycheckerboard;
   reset     <= SW;
 
---display driver
+-- LED seg 7 display driver
   q0 <= std_logic_vector(ypos(3 downto 0));
 
   q2 <= std_logic_vector(xpos(3 downto 0));
@@ -294,5 +300,5 @@ begin
   clk <= CLK100MHZ;
 
   LED <= SW;
--- LED (8 downto 1) <= std_logic_vector(vga_REDGREENBLUE (11 downto 4));
+-- LED (8 downto 1) <= std_logic_vector(vga_REDGREENBLUE (11 downto 4)); used for debugging
 end Behavioral;
