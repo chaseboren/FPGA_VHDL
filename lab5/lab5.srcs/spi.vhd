@@ -1,5 +1,7 @@
 
-
+--SPI for ADXL362. No dependencies.
+--Implementation is a pretty faithful reproduction of the the
+--lab hints document.
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
@@ -56,9 +58,6 @@ architecture Behavioral of accel_spi_rw is
 
   signal SPI_shiftregister : std_logic_vector (23 downto 0);
 
-  signal sclk_d       : std_logic;
-  signal sclk_falling : std_logic;
-  signal sclk_rising  : std_logic;
 
   signal MOSIint : std_logic;
   signal incSclk : std_logic;
@@ -190,7 +189,7 @@ begin
         else
           SPI_next_state <= idlespi;
         end if;
-      when setCSlow =>
+      when setCSlow =>    ---must be low to enable accel.
         if timerDone = '1' then
           SPI_next_state <= sclkHi;
         else
@@ -313,16 +312,6 @@ begin
         incSclk    <= '0';
         SPIdone    <= '1';
 
-
-      when others =>
-        CSbint     <= '1';
-        timerstart <= '0';
-        timerMax   <= 0;
-        sclkint    <= '0';
-        incSclk    <= '0';
-        SPIdone    <= '0';
-
-
     end case;
   end process;
 
@@ -340,10 +329,7 @@ begin
 
     end if;
   end process;
-  --rising and falling edge functions for SCLK to avoid using clock buffer
-  sclk_d       <= sclkint when rising_edge(clk);  --infers a flip flop
-  sclk_rising  <= not sclk_d and sclkint;
-  sclk_falling <= sclk_d and not sclkint;
+
 
   MISO_register : process(clk, reset)
   begin
@@ -392,7 +378,7 @@ begin
         SPI_shiftregister <= toSPIbytes;
       elsif SPI_state = setCSlow then
         if timerDone = '1' then
-          MOSIint                         <= SPI_shiftregister(23);
+          MOSIint                         <= SPI_shiftregister(23); ---compact way to do shift registers
           SPI_shiftregister (23 downto 1) <= SPI_shiftregister (22 downto 0);
         end if;
       elsif SPI_state = checkSclkCntr then
@@ -402,7 +388,7 @@ begin
     end if;
   end process;
 
-  timer : process(clk, reset)
+  timer : process(clk, reset) --verbatim from lecture 7.
   begin
     if reset = '1' then
       timerCntr <= 0;

@@ -411,7 +411,7 @@ begin
   Y_filteredpos <= '1' when (y_unfiltered > x"BF") and (y_unfiltered < x"E0")  else '0';  --this is about 1/2 g
   Y_filteredneg <= '1' when (y_unfiltered > x"20") and (y_unfiltered < x"4F") else '0';
 
-  X_flat <= '1' when (x_unfiltered > x"FE") or (x_unfiltered < x"01") else '0';
+  X_flat <= '1' when (x_unfiltered > x"FE") or (x_unfiltered < x"01") else '0'; --approximately level
   Y_flat <= '1' when (y_unfiltered > x"FE") or (y_unfiltered < x"01") else '0';
 
 
