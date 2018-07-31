@@ -23,10 +23,18 @@ cold_start:
 ; s5	-	Stores the debounced push btn signal
 ; s6	-	Debounced register
 
-	reset: 	LOAD s3, 00								;reset ALU setpoint to 0
+	reset: 	LOAD s3, 00
+					LOAD s4, 00;reset ALU setpoint to 0
 			OUTPUT s3, 04							;display reset values
+			OUTPUT s4, 05
 			LOAD s5, 00
 			LOAD s6, 00
+			LOAD s7, 00
+			LOAD s8, 00
+			LOAD s9, 00
+			LOAD sA, 00
+			LOAD sB, 00
+			LOAD sC, 00
 
 			;; wait for btn 3 to be depressed to exit reset state
 			INPUT s5, 03
@@ -102,6 +110,8 @@ cold_start:
 						 SL0 s10
 						 AND s10, 0F ; only loop 4 times
 						 JUMP NZ, multloop1
+						 LOAD s3, s11
+						 LOAD s4, s12
 						 JUMP opend
 
 
