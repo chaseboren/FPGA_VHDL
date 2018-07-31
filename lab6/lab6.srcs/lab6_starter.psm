@@ -32,52 +32,64 @@ cold_start:
 			INPUT s5, 03
 			TEST s5, 08
 			JUMP NZ, reset	;stay in reset until 'depressed'
-		
+
 	; Main Processing Loop
 	; Runs debouncer on input push btns
 	; Checks current state of push btns to perform operation
 	mainlp:	INPUT s5, 03	; store push buttons
+			INPUT s7, 02; store sliders not debouncing them
 			CALL del10ms	; delay 10ms
 			INPUT s6, 03	; store push buttons again
 			AND s5, s6		; AND push buttons to only keep signals high if held for 10ms
-			
+
+			;split the switch registers
+			LOAD s8, s7
+			AND s8, 0F
+			LOAD s9, s7
+			AND s9, F0
+
 			; Determine if Btn0 was pressed
 			TEST s5, 01
-			CALL NZ, opadd	; Start Addition
-			
-			; Determine if Btn1 was pressed
-			TEST s5, 02
-			CALL NZ, opsub	; Start Subtraction
-			
+			CALL NZ, opstests	; Start subtraction
+
 			; Determine if Btn3 was pressed
 			TEST s5, 08
 			JUMP NZ, reset	; Start Subtraction
-			
+
 			; Update Displays
 			OUTPUT s3, 04	; Update Display with ALU REG
 			OUTPUT s4, 05
 
 			JUMP mainlp
-	
+	opstests: TEST s9, 10
+		JUMP NZ, opadd
+		TEST S9, 20
+		JUMP NZ, opsub
+		;TEST s9, 40
+		;JUMP NZ, opshift
+		;TEST s9, 80
+		;JUMP NZ, opmultiply
+		JUMP mainlp
+
 	;	ADD OPERATION
 	;	Handles Carry
 	opadd:	ADD 	s3, 01 ; ADD 1 to register
-	
+
 	addopend:	INPUT s5, 03
-				TEST s5, 01			;check btn0 and only exit this function if button isn't pressed
+				TEST s5, 02			;check btn0 and only exit this function if button isn't pressed
 				JUMP NZ, addopend	;stay in this routine until btn is depressed
 				RETURN
-	
+
 	;	SUBTRACT OPERATION
 	;	Basic Subtract
 	opsub:	SUB s3, 01		; subtract 1 from S3
-	
+
 	subend:	INPUT s5, 03
-			TEST s5, 02			;check btn1 and only exit this function if button isn't pressed
+			TEST s5, 01			;check btn1 and only exit this function if button isn't pressed
 			JUMP NZ, subend	;stay in this routine until btn is depressed
 			RETURN
-	
-	
+
+
 
 	;;HELPER FUNCTIONS FROM TESTPROG (used for delay in top level, added a 10ms delay)
 	delms:	INPUT s0,07
@@ -85,7 +97,7 @@ cold_start:
 			COMPARE s0,s1
 			JUMP Z, delmslp
 			RETURN
-			
+
 	del10ms:	LOAD s2, F5	;load 245
 	del10mslp:	CALL delms
 				ADD s2, 01
@@ -97,6 +109,3 @@ cold_start:
 			ADD s2, 01
 			JUMP NZ, del250mslp
 			RETURN
-				
-						
-						                  
