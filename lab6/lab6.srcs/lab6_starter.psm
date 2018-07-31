@@ -65,29 +65,44 @@ cold_start:
 		JUMP NZ, opadd
 		TEST S9, 20
 		JUMP NZ, opsub
-		;TEST s9, 40
-		;JUMP NZ, opshift
-		;TEST s9, 80
-		;JUMP NZ, opmultiply
+		TEST s9, 40
+		JUMP NZ, opshift
+		TEST s9, 80
+		JUMP NZ, opmultiply
 		JUMP mainlp
 
 	;	ADD OPERATION
 	;	Handles Carry
-	opadd:	ADD 	s3, 01 ; ADD 1 to register
+	opadd:	ADD 	s3, s8 ; ADD 1 to register
+					ADDCY s4, 00; carry in to top part of the byte
 
-	addopend:	INPUT s5, 03
-				TEST s5, 02			;check btn0 and only exit this function if button isn't pressed
-				JUMP NZ, addopend	;stay in this routine until btn is depressed
+	opend:	INPUT s5, 03
+				TEST s5, 01			;check btn0 and only exit this function if button isn't pressed
+				JUMP NZ, opend	;stay in this routine until btn is depressed
 				RETURN
 
 	;	SUBTRACT OPERATION
-	;	Basic Subtract
-	opsub:	SUB s3, 01		; subtract 1 from S3
+	opsub:	SUB s3, s8; subtract the 4 switch value from bottom half of byte
+					SUBCY s4, 00;
+					JUMP opend
 
-	subend:	INPUT s5, 03
-			TEST s5, 01			;check btn1 and only exit this function if button isn't pressed
-			JUMP NZ, subend	;stay in this routine until btn is depressed
-			RETURN
+	opshift: SL0 s3 ; insert 0 on the right
+	 				 SLA s4 ; add in the carry bit.
+					 JUMP opend
+
+	opmultiply: LOAD s10, 01
+							LOAD s11, 00
+							LOAD s12, 00
+	multloop1:		TEST s8, s10
+					   	JUMP Z, no_add1
+							ADD s11, s3
+							ADDCY s12, s4
+		no_add1: SLA s11
+						 SLA s12
+						 SL0 s10
+						 AND s10, 0F ; only loop 4 times
+						 JUMP NZ, multloop1
+						 JUMP opend
 
 
 
