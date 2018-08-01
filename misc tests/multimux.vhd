@@ -13,7 +13,7 @@ entity question1 is
 
        --4 bit inputs
        A : in std_logic_vector (3 downto 0);
-       F : in std_logic_vector (3 downto 0)
+       F : in std_logic_vector (3 downto 0);
 
        --outputs
        W : out std_logic;
@@ -44,8 +44,8 @@ begin
   w_int <= C or B;
   W     <= w_int;
 
-  Y <= F when (w_int = '1') else mux1_out; --second mux
+  Y <= mux1_out when (w_int = '0') else F; --second mux
 
-  mux1_out <= Q when (C = '1') else mux1mux1_const; --first mux
+  mux1_out <= Q when (C = '1') else mux1_const; --first mux
 
 end architecture;
