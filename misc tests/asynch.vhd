@@ -20,7 +20,7 @@ begin
         stretchedpulse <= '1';
       else
         cntr <= 0;
-        stretchedpulse <'0';
+        stretchedpulse <='0';
       end if;
     elsif cntr > 0 then
       if cntr < 50000 then

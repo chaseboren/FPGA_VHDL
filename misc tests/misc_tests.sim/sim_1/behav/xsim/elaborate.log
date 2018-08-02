@@ -1,0 +1,15 @@
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto 0a0d9a73139c455eb5920d7e7f605339 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot asynchpulseTB_behav xil_defaultlib.asynchpulseTB -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture testbench of entity xil_defaultlib.asynchpulsetb
+Built simulation snapshot asynchpulseTB_behav

@@ -1,0 +1,1 @@
+-wto "0a0d9a73139c455eb5920d7e7f605339" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "asynchpulseTB_behav" "xil_defaultlib.asynchpulseTB" -log "elaborate.log" 

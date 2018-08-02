@@ -1,0 +1,58 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulsecounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateMeasure
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateTB
+ERROR: [VRFC 10-616] entity testbench is not yet compiled [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:9]
+ERROR: [VRFC 10-91] std_logic is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:11]
+ERROR: [VRFC 10-91] std_logic is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:12]
+ERROR: [VRFC 10-91] std_logic is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:13]
+ERROR: [VRFC 10-91] unsigned is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:14]
+ERROR: [VRFC 10-91] clk is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:19]
+ERROR: [VRFC 10-91] ns is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:20]
+ERROR: [VRFC 10-91] clk is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:21]
+ERROR: [VRFC 10-91] ns is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:22]
+ERROR: [VRFC 10-91] reset is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:25]
+ERROR: [VRFC 10-91] pulsein is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:26]
+ERROR: [VRFC 10-91] pulseratemeasure is not declared [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:29]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateTB
+ERROR: [VRFC 10-56] pulseratemeasure is not a component [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:29]
+ERROR: [VRFC 10-1504] unit testbench ignored due to previous errors [/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd:9]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulsecounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateMeasure
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulsecounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateMeasure
+ERROR: [VRFC 10-1412] syntax error near elsif [/home/chase/github/FPGA_VHDL/misc tests/pulsecounter.vhd:44]
+ERROR: [VRFC 10-1412] syntax error near if [/home/chase/github/FPGA_VHDL/misc tests/pulsecounter.vhd:51]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/misc tests/pulsecounter.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulsecounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateMeasure
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/pulserateTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pulseRateTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/LEDtoggleTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity LEDtoggleTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/LEDtoggleTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity LEDtoggleTB
+ERROR: [VRFC 10-1227] physical unit does not denote a physical type [/home/chase/github/FPGA_VHDL/misc tests/LEDtoggleTB.vhd:28]
+ERROR: [VRFC 10-1504] unit testbench ignored due to previous errors [/home/chase/github/FPGA_VHDL/misc tests/LEDtoggleTB.vhd:9]
+INFO: [VRFC 10-240] VHDL file /home/chase/github/FPGA_VHDL/misc tests/LEDtoggleTB.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/LEDtoggleTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity LEDtoggleTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/LEDtoggleTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity LEDtoggleTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/asynchpulseTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity asynchpulseTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/asynchpulseTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity asynchpulseTB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/chase/github/FPGA_VHDL/misc tests/asynchpulseTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity asynchpulseTB

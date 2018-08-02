@@ -33,13 +33,14 @@ begin
       end if;
     end if;
   end process;
-  clear <= '1' when (ten_msCntr = "00011000011010100000") else '0'; --1 million to get 10 ms
+  clear <= '1' when (ten_msCntr = "11110100001001000000") else '0'; --1 million to get 10 ms
   ten_msPulse <= clear;
 
   process(clk100, reset)
   begin
     if reset = '1' then
       cntr2 <= (others => '0');
+      cntr3 <= (others => '0');
     elsif rising_edge(clk100) then
       if pulseIn = '1' then
         cntr2 <= cntr2 + 1;

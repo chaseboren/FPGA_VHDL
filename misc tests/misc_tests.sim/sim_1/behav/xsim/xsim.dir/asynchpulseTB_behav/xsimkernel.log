@@ -1,0 +1,4 @@
+Running: xsim.dir/asynchpulseTB_behav/xsimk -simmode gui -wdb asynchpulseTB_behav.wdb -simrunnum 0 -socket 38783
+Design successfully loaded
+Design Loading Memory Usage: 43152 KB (Peak: 43204 KB)
+Design Loading CPU Usage: 0 ms
