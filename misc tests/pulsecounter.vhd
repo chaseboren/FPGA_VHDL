@@ -44,7 +44,7 @@ begin
     elsif rising_edge(clk100) then
       if pulseIn = '1' then
         cntr2 <= cntr2 + 1;
-      elsif ten_msPulse = '1' then
+      elsif ten_msPulse = '1' then --exploiting the fact that the wont happen at the same time
         cntr3 <= cntr2;
         cntr2 <= (others => '0');
       end if;

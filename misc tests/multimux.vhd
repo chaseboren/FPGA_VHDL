@@ -42,7 +42,7 @@ begin
   end process;
 
   w_int <= C or B;
-  W     <= w_int;
+  W     <= w_int; --can't read outputs
 
   Y <= mux1_out when (w_int = '0') else F; --second mux
 
