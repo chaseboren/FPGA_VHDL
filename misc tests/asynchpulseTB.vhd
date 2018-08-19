@@ -25,7 +25,7 @@ begin
   end process;
 
   reset  <= '1', '0' after 20 ns;
-  asynch <= '0', '1' after 28 ns, '0'after 68 ns;
+  asynch <= '0', '1' after 28 ns, '0'after 68 ns, '1' after 101 ns, '0' after 150 ns;
 
   process(clk, reset)
   begin
@@ -62,6 +62,6 @@ E1 <= A & not B xor C ror 2;
 E2 <= D ror 2 or not A & B;
 E3 <= resize(A*B, 3) & not A;
 E4 <= -A*B + C;
-E5 <= A*B - C srl 3; 
+E5 <= A*B - C srl 3;
 
 end testbench;

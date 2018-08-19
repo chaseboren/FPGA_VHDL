@@ -1,0 +1,418 @@
+
+*** Running vivado
+    with args -log dds_compiler_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dds_compiler_0.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+Sourcing tcl script '/root/.Xilinx/Vivado/Vivado_init.tcl'
+source dds_compiler_0.tcl -notrace
+Command: synth_design -top dds_compiler_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 24365 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:27 . Memory (MB): peak = 1317.844 ; gain = 84.906 ; free physical = 1203 ; free virtual = 5066
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'dds_compiler_0' [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:69]
+WARNING: [Synth 8-5640] Port 'debug_axi_pinc_in' is missing in component declaration [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:72]
+WARNING: [Synth 8-5640] Port 'debug_axi_poff_in' is missing in component declaration [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:72]
+WARNING: [Synth 8-5640] Port 'debug_axi_resync_in' is missing in component declaration [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:72]
+WARNING: [Synth 8-5640] Port 'debug_axi_chan_in' is missing in component declaration [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:72]
+WARNING: [Synth 8-5640] Port 'debug_core_nd' is missing in component declaration [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:72]
+WARNING: [Synth 8-5640] Port 'debug_phase' is missing in component declaration [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:72]
+WARNING: [Synth 8-5640] Port 'debug_phase_nd' is missing in component declaration [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:72]
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_MODE_OF_OPERATION bound to: 0 - type: integer 
+	Parameter C_MODULUS bound to: 9 - type: integer 
+	Parameter C_ACCUMULATOR_WIDTH bound to: 8 - type: integer 
+	Parameter C_CHANNELS bound to: 1 - type: integer 
+	Parameter C_HAS_PHASE_OUT bound to: 0 - type: integer 
+	Parameter C_HAS_PHASEGEN bound to: 0 - type: integer 
+	Parameter C_HAS_SINCOS bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 2 - type: integer 
+	Parameter C_MEM_TYPE bound to: 1 - type: integer 
+	Parameter C_NEGATIVE_COSINE bound to: 0 - type: integer 
+	Parameter C_NEGATIVE_SINE bound to: 0 - type: integer 
+	Parameter C_NOISE_SHAPING bound to: 0 - type: integer 
+	Parameter C_OUTPUTS_REQUIRED bound to: 0 - type: integer 
+	Parameter C_OUTPUT_FORM bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_PHASE_ANGLE_WIDTH bound to: 8 - type: integer 
+	Parameter C_PHASE_INCREMENT bound to: 2 - type: integer 
+	Parameter C_PHASE_INCREMENT_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_RESYNC bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_OPTIMISE_GOAL bound to: 0 - type: integer 
+	Parameter C_USE_DSP48 bound to: 0 - type: integer 
+	Parameter C_POR_MODE bound to: 0 - type: integer 
+	Parameter C_AMPLITUDE bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_HAS_S_PHASE bound to: 1 - type: integer 
+	Parameter C_S_PHASE_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_S_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_CONFIG bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_DATA bound to: 1 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_PHASE bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_CHAN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dds_compiler_v6_0_16' declared at '/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/hdl/dds_compiler_v6_0_vh_rfs.vhd:47294' bound to instance 'U0' of component 'dds_compiler_v6_0_16' [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:174]
+INFO: [Synth 8-256] done synthesizing module 'dds_compiler_0' (7#1) [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/synth/dds_compiler_0.vhd:69]
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized0 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized0 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized0 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized8 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized8 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized8 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized8 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized8 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized6 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized6 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized6 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized6 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized6 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port SINIT
+WARNING: [Synth 8-3331] design sin_cos has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized2 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized2 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized2 has unconnected port SINIT
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port RFD
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[15]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[14]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[13]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[12]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[11]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[10]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[9]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[8]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[7]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[6]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[5]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[4]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[3]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[2]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[1]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port COSINE[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port ADDR[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port REG_SELECT
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port SCLR
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port WE
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[7]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[6]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[5]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[4]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[3]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[2]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[1]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port DATA[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[7]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[6]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[5]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[4]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[3]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[2]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[1]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port PINC_IN[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[7]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[6]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[5]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[4]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[3]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[2]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[1]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port POFF_IN[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_core has unconnected port RESYNC_IN
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_data_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_data_tuser[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tdata[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tuser[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port aclken
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port aresetn
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_phase_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_phase_tuser[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_config_tvalid
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_config_tdata[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_config_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_data_tready
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tready
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:43 . Memory (MB): peak = 1392.453 ; gain = 159.516 ; free physical = 1204 ; free virtual = 5069
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:43 . Memory (MB): peak = 1392.453 ; gain = 159.516 ; free physical = 1204 ; free virtual = 5069
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:43 . Memory (MB): peak = 1392.453 ; gain = 159.516 ; free physical = 1204 ; free virtual = 5069
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/dds_compiler_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/dds_compiler_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/chase/github/FPGA_VHDL/lab7/lab7.runs/dds_compiler_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/chase/github/FPGA_VHDL/lab7/lab7.runs/dds_compiler_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1677.262 ; gain = 0.000 ; free physical = 910 ; free virtual = 4814
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:01:52 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 986 ; free virtual = 4891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:01:52 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 986 ; free virtual = 4891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/chase/github/FPGA_VHDL/lab7/lab7.runs/dds_compiler_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:01:52 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 988 ; free virtual = 4893
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5547] Trying to map ROM "sin_cos_lut" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "sin_cos_lut" into Block RAM due to explicit "ram_style" or "rom_style" specification
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:01:52 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 980 ; free virtual = 4885
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_dds/I_SINCOS.i_std_rom.i_rom/i_rtl.i_double_table.i_rom_reg_a' (xbip_pipe_v3_0_5_viv__parameterized6) to 'U0/i_synth/i_dds/I_SINCOS.i_std_rom.i_rom/i_rtl.i_double_table.i_op_reg_a'
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_dds/I_SINCOS.i_std_rom.i_rom/i_rtl.i_double_table.i_rom_reg_b' (xbip_pipe_v3_0_5_viv__parameterized6) to 'U0/i_synth/i_dds/I_SINCOS.i_std_rom.i_rom/i_rtl.i_double_table.i_op_reg_b'
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5547] Trying to map ROM "p_0_out" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "p_0_out" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_data_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_data_tuser[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tdata[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tuser[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port aclken
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port aresetn
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_phase_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_phase_tuser[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_config_tvalid
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_config_tdata[0]
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port s_axis_config_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_data_tready
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16_viv has unconnected port m_axis_phase_tready
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16 has unconnected port m_axis_data_tlast
+WARNING: [Synth 8-3331] design dds_compiler_v6_0_16 has unconnected port m_axis_data_tuser[0]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/i_synth/\has_s_phase.s_phase_tlast_checks.event_s_phase_tlast_unexpected_reg )
+INFO: [Synth 8-3332] Sequential element (has_s_phase.s_phase_tlast_checks.event_s_phase_tlast_unexpected_reg) is unused and will be removed from module dds_compiler_v6_0_16_viv.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:01:53 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 968 ; free virtual = 4876
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance U0/i_synth/i_0/i_dds/I_SINCOS.i_std_rom.i_rom/i_rtl.i_double_table.i_block_rom.i_pipe_1.pre_asyn_sin_RAM_op_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:02:14 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 836 ; free virtual = 4751
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:02:15 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 836 ; free virtual = 4751
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:02:15 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |LUT1       |     1|
+|2     |LUT2       |     2|
+|3     |LUT3       |     8|
+|4     |RAMB18E1_2 |     1|
+|5     |FDRE       |    15|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.262 ; gain = 444.324 ; free physical = 835 ; free virtual = 4750
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:01:24 . Memory (MB): peak = 1677.262 ; gain = 159.516 ; free physical = 890 ; free virtual = 4805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1677.270 ; gain = 444.324 ; free physical = 901 ; free virtual = 4816
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 107 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:02:18 . Memory (MB): peak = 1677.270 ; gain = 455.879 ; free physical = 883 ; free virtual = 4800
+INFO: [Common 17-1381] The checkpoint '/home/chase/github/FPGA_VHDL/lab7/lab7.runs/dds_compiler_0_synth_1/dds_compiler_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/chase/github/FPGA_VHDL/lab7/lab7.srcs/sources_1/ip/dds_compiler_0/dds_compiler_0.xci
+INFO: [Coretcl 2-1174] Renamed 9 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/chase/github/FPGA_VHDL/lab7/lab7.runs/dds_compiler_0_synth_1/dds_compiler_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file dds_compiler_0_utilization_synth.rpt -pb dds_compiler_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.21 . Memory (MB): peak = 1677.270 ; gain = 0.000 ; free physical = 885 ; free virtual = 4802
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 19 07:54:45 2018...
