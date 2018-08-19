@@ -1,0 +1,154 @@
+; Author:	K. Newlander
+; LAB6 Starter Design that contains a global register that defaults to 0 on startup
+;	Adds '1' for each press of BTNR
+;	Subtracts '1' for each press of BTNL
+
+
+; Modified by Chase Boren
+
+; Extra ASM to fix issue with Vivado (see documentation), Skips Address 03
+	JUMP cold_start
+	JUMP cold_start
+	JUMP cold_start
+	JUMP cold_start
+; Cold Start
+cold_start:
+
+; SLIDERS are assigned to PORT 02
+; PUSHBTNs are assigned to PORT 03
+; PUSHBTN(0) is used to add 1
+; PUSHBTN(1) is used to subtract 1
+; PUSHBTN(3) is used to reset design
+
+; NOTE: (s# usage):
+; s0,s1,s2 - Used in delay subroutines
+; s3	-	Stores global register for value to display
+; s5	-	Stores the debounced push btn signal
+; s6	-	Debounced register
+
+; s4 is for the rightmost Display
+; s7 is the switches
+; s8 is the value from switches
+; s9 is the operation from switches
+; sA is a bitmask for the multiplication
+; sB-sE are used for multiplication
+
+	reset: 	LOAD s3, 00
+					LOAD s4, 00;reset ALU setpoint to 0
+			OUTPUT s3, 04							;display reset values
+			OUTPUT s4, 05
+			LOAD s5, 00 ; store null values or the rest.
+			LOAD s6, 00
+			LOAD s7, 00
+			LOAD s8, 00
+			LOAD s9, 00
+			LOAD sA, 00
+			LOAD sB, 00
+			LOAD sC, 00
+
+			;; wait for btn 3 to be depressed to exit reset state
+			INPUT s5, 03
+			TEST s5, 08
+			JUMP NZ, reset	;stay in reset until 'depressed'
+
+	; Main Processing Loop
+	; Runs debouncer on input push btns
+	; Checks current state of push btns to perform operation
+	mainlp:	INPUT s5, 03	; store push buttons
+			INPUT s7, 02; store sliders not debouncing them
+			CALL del10ms	; delay 10ms
+			INPUT s6, 03	; store push buttons again
+			AND s5, s6		; AND push buttons to only keep signals high if held for 10ms
+
+			;split the switch registers
+			LOAD s8, s7
+			AND s8, 0F
+			LOAD s9, s7
+			AND s9, F0
+
+
+
+			; Determine if Btn0 was pressed
+			TEST s5, 01
+			CALL NZ, opstests	; Start subtraction
+
+			; Determine if Btn3 was pressed
+			TEST s5, 08
+			JUMP NZ, reset
+
+
+
+			; Update Displays
+			OUTPUT s3, 04	; Update Display with ALU REG
+			OUTPUT s4, 05
+
+			JUMP mainlp
+	opstests: TEST s9, 10 ; the order of these tests determines the precedence
+		JUMP NZ, opadd
+		TEST S9, 20
+		JUMP NZ, opsub
+		TEST s9, 40
+		JUMP NZ, opshift
+		TEST s9, 80
+		JUMP NZ, opmultiply
+		RETURN ; need a return because I used call to get here, the processor goes into reset if a button is pressed and no switches are high otherwise
+
+	;	ADD OPERATION
+	;	Handles Carry
+	opadd:	ADD 	s3, s8 ; ADD 1 to register
+					ADDCY s4, 00; carry in to top part of the byte
+					; strictly speaking this should be jump opend but it is the next subroutine so it just reads there next anyways
+
+	opend:	INPUT s5, 03
+				TEST s5, 01			;check btn0 and only exit this function if button isn't pressed
+				JUMP NZ, opend	;stay in this routine until btn is depressed
+				RETURN
+
+	;	SUBTRACT OPERATION
+	opsub:	SUB s3, s8; subtract the 4 switch value from bottom half of byte
+					SUBCY s4, 00;
+					JUMP opend
+
+	opshift: SL0 s3 ; insert 0 on the right
+	 				 SLA s4 ; add in the carry bit.
+					 JUMP opend
+
+	opmultiply: LOAD sA, 01
+							LOAD sB, s3
+							LOAD sC, s4
+							LOAD sD, 00
+							LOAD sE, 00
+	multloop1:		TEST s8, sA
+					   	JUMP Z, no_add1 ; if that digit in the mulitiplier is zero, skip the add
+							ADD sD, sB
+							ADDCY sE, sC ; uses the cary bit from the previous.
+		no_add1: SL0 sB ; shift the intermediate value
+						 SLA sC ; shift the intermediate value
+						 SL0 sA ; shift the bitmask
+						 AND sA, 0F ; only loop 4 times for the  4 bit input.
+						 JUMP NZ, multloop1
+						 LOAD s3, sD
+						 LOAD s4, sE
+						 JUMP opend
+
+
+
+
+	;;HELPER FUNCTIONS FROM TESTPROG (used for delay in top level, added a 10ms delay)
+	delms:	INPUT s0,07
+	delmslp:	INPUT s1,07
+			COMPARE s0,s1
+			JUMP Z, delmslp
+			RETURN
+
+	del10ms:	LOAD s2, F5	;load 245
+	del10mslp:	CALL delms
+				ADD s2, 01
+				JUMP NZ, del10mslp
+				RETURN
+
+	del250ms:	LOAD s2, 05
+	del250mslp: CALL delms
+			ADD s2, 01
+			JUMP NZ, del250mslp
+			RETURN

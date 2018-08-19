@@ -8,14 +8,14 @@ entity pwm_generator is
     clk        : in  std_logic;
     reset      : in  std_logic;
     duty_cycle : in  std_logic_vector (9 downto 0);
-    pwm_out    : out std_logic;
+    pwm_out    : out std_logic
     );
 end pwm_generator;
 
 architecture behavorial of pwm_generator is
 
-  signal cntr_sig unsigned (9 downto 0);
-  signal cast_dc unsigned (9 downto 0);
+  signal cntr_sig : unsigned (9 downto 0);
+  signal cast_dc : unsigned (9 downto 0);
 
 
 begin
@@ -30,10 +30,10 @@ begin
         cntr_sig <= cntr_sig + 1;       --iterate
         pwm_out  <= '1';
       elsif cntr_sig >= cast_dc then
-        cntr_sign <= cntr_sign + 1;
+        cntr_sig <= cntr_sig + 1;
         pwm_out   <= '0';
       end if;
     end if;
   end process;
-  
+
 end behavorial;  -- behavorial

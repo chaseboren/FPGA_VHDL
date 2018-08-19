@@ -8,12 +8,12 @@ end asynchpulseTB;
 
 architecture testbench of asynchpulseTB is
 
-  signal clk            : std_logic;
-  signal asynch         : std_logic;
-  signal stretchedpulse : std_logic;
-  signal reset          : std_logic;
-  signal cntr           : integer range 0 to 50000;
-  signal A, B: signed (2 downto 0);
+  signal clk                      : std_logic;
+  signal asynch                   : std_logic;
+  signal stretchedpulse           : std_logic;
+  signal reset                    : std_logic;
+  signal cntr                     : integer range 0 to 50000;
+  signal A, B                     : signed (2 downto 0);
   signal C, D, E1, E2, E3, E4, E5 : signed (5 downto 0);
 begin
   clock : process
@@ -38,7 +38,7 @@ begin
           cntr           <= cntr + 1;
           stretchedpulse <= '1';
         else
-          cntr <= 0;
+          cntr           <= 0;
           stretchedpulse <= '0';
         end if;
       elsif cntr > 0 then
@@ -53,15 +53,15 @@ begin
     end if;
 
   end process;
-A <= "110";
-B <= "100";
-C <= "011000";
-D <= "111011";
+  A <= "110";
+  B <= "100";
+  C <= "011000";
+  D <= "111011";
 
-E1 <= A & not B xor C ror 2;
-E2 <= D ror 2 or not A & B;
-E3 <= resize(A*B, 3) & not A;
-E4 <= -A*B + C;
-E5 <= A*B - C srl 3;
+  E1 <= A & not B xor C ror 2;
+  E2 <= D ror 2 or not A & B;
+  E3 <= resize(A*B, 3) & not A;
+  E4 <= -A*B + C;
+  E5 <= A*B - C srl 3;
 
 end testbench;
